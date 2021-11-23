@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace BusReservationSystem.Models
 {
-    public partial class Bu
+    public partial class Bus
     {
-        public Bu()
+        public Bus()
         {
             Schedules = new HashSet<Schedule>();
         }

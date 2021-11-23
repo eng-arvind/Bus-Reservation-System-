@@ -19,7 +19,7 @@ namespace BusReservationSystem.Models
 
         public virtual DbSet<AdminMaster> AdminMasters { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
-        public virtual DbSet<Bu> buses { get; set; }
+        public virtual DbSet<Bus> buses { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
@@ -95,7 +95,7 @@ namespace BusReservationSystem.Models
                     .HasConstraintName("fk_schID");
             });
 
-            modelBuilder.Entity<Bu>(entity =>
+            modelBuilder.Entity<Bus>(entity =>
             {
                 entity.HasKey(e => e.BusId)
                     .HasName("pkBusID");

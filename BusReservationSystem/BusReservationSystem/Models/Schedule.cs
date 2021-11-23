@@ -19,7 +19,7 @@ namespace BusReservationSystem.Models
         public int? SeatAvl { get; set; }
         public decimal? Fare { get; set; }
 
-        public virtual Bu Bus { get; set; }
+        public virtual Bus Bus { get; set; }
         public virtual Route Route { get; set; }
         public virtual ICollection<Booking> Bookings { get; set; }
     }

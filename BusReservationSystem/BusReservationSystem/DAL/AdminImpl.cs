@@ -119,7 +119,7 @@ namespace BusReservationSystem.DAL
         {
             var res = (from s in db.Schedules
                                join b in db.Bookings on s.ScheduleId equals b.ScheduleId
-                               where s.JrnyDate.Month == DateTime.Now.Month-1 && s.JrnyDate.Year == DateTime.Now.Year
+                               where s.JrnyDate.Month == DateTime.Now.Month-1 && s.JrnyDate.Year == DateTime.Now.Year && b.BookStatus=="Booked"
                                select b).ToList();
             decimal totalfare = 0;
             foreach(var fare in res)
@@ -228,6 +228,7 @@ namespace BusReservationSystem.DAL
             olddata.Fare = updateSch.Fare;
             olddata.BusId = updateSch.BusId;
             olddata.RouteId = updateSch.RouteId;
+            olddata.SeatAvl = updateSch.SeatAvl;
             var res = db.SaveChanges();
             if (res == 1)
                 return true;

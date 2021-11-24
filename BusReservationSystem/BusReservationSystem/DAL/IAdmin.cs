@@ -18,9 +18,9 @@ namespace BusReservationSystem.DAL
         public bool DeleteRoute(int routeId);
         public bool DeleteSchedule(int schId);
         public List<UserReg> GetRegUserNotBookedYet();
-        public List<Bus> PrefferedTypeOfBus();
+        public Bus PrefferedTypeOfBus();
         public decimal LastMnthProfit();
         public Route RouteWithMaxReservation();
-        public List<Booking> ResDetailsOFCust();
+        public List<Booking> ResDetailsOFCust(DateTime jDate);
     }
 }

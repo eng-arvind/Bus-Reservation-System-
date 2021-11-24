@@ -52,11 +52,12 @@ namespace BusReservationSystem.DAL
 
         public List<UserReg> GetRegUserNotBookedYet()
         {
-            /*  var res = from d in db.UserRegs
-                        join b in db.Bookings
-                        on d.UserEmail equals b.UserEmail
-                        select d;*/
-            throw new NotImplementedException();
+            var res = (from d in db.UserRegs
+                      where !(db.Bookings.Any(x => x.UserEmail == d.UserEmail))
+                      select d).ToList();
+            return res;
+
+          /*  throw new NotImplementedException();*/
         }
 
         public bool InsertBus(Bus newbus)
@@ -94,22 +95,74 @@ namespace BusReservationSystem.DAL
 
         public decimal LastMnthProfit()
         {
-            throw new NotImplementedException();
+            var res = (from s in db.Schedules
+                               join b in db.Bookings on s.ScheduleId equals b.ScheduleId
+                               where s.JrnyDate.Month == DateTime.Now.Month-1 && s.JrnyDate.Year == DateTime.Now.Year
+                               select b).ToList();
+            decimal totalfare = 0;
+            foreach(var fare in res)
+            {
+                totalfare += Convert.ToDecimal(fare.Tcharge);
+            }
+            return totalfare;
+            /*throw new NotImplementedException();*/
         }
 
-        public List<Bus> PrefferedTypeOfBus()
+        public Bus PrefferedTypeOfBus()
         {
-            throw new NotImplementedException();
+            Dictionary<int, int> bookings = new();
+            foreach (var b in db.Bookings.ToList())
+            {
+                bookings[(int)b.ScheduleId]++;
+            }
+            int maxcount = bookings.Max(x => x.Value);
+            int maxbooking = 0;
+            foreach (var k in bookings)
+            {
+                if (k.Value == maxcount)
+                {
+                    maxbooking = k.Key;
+                    break;
+                }
+
+            }
+            int res =Convert.ToInt32(db.Schedules.Where(x => x.ScheduleId == maxbooking).FirstOrDefault().BusId);
+            return db.buses.Where(x => x.BusId == res).FirstOrDefault();
+            /*throw new NotImplementedException();*/
         }
 
-        public List<Booking> ResDetailsOFCust()
+        public List<Booking> ResDetailsOFCust(DateTime jDate)
         {
-            throw new NotImplementedException();
+            var res = (from b in db.Bookings
+                       join s in db.Schedules
+                       on b.ScheduleId equals s.ScheduleId
+                       where s.JrnyDate == jDate
+                       select b).ToList();
+            return res;
+           /* throw new NotImplementedException();*/
         }
 
         public Route RouteWithMaxReservation()
         {
-            throw new NotImplementedException();
+            Dictionary<int, int> bookings = new();
+            foreach (var b in db.Bookings.ToList())
+            {
+                bookings[(int)b.ScheduleId]++;
+            }
+            int maxcount = bookings.Max(x => x.Value);
+            int maxbooking = 0;
+            foreach (var k in bookings)
+            {
+                if (k.Value == maxcount)
+                {
+                    maxbooking = k.Key;
+                    break;
+                }
+
+            }
+            int res = Convert.ToInt32(db.Schedules.Where(x => x.ScheduleId == maxbooking).FirstOrDefault().RouteId);
+            return db.Routes.Where(x => x.RouteId == res).FirstOrDefault();
+           /* throw new NotImplementedException();*/
         }
 
         public bool UpdateBus(Bus updateBus, int busId)

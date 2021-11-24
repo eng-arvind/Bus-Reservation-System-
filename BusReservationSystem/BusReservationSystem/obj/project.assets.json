@@ -5797,11 +5797,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\nitish.kumar10\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\": {}
+>>>>>>> b06292160e858bd03d031d075bbc1aeb939e5939
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
       "projectName": "BusReservationSystem",
       "projectPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
@@ -5810,6 +5815,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nitish.kumar10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+      "projectName": "BusReservationSystem",
+      "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+      "packagesPath": "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b06292160e858bd03d031d075bbc1aeb939e5939
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

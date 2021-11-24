@@ -14,11 +14,11 @@ namespace TestBusReservationSystem
         static UserReg user = new();
         public static void UserRegister()
         {
-            user.FirstName = "Karthik";
-            user.LastName = "K S";
-            user.UserEmail = "3420karthik@gmail.com";
-            user.UserMob = "8277398693";
-            user.Pswd = "Karthik@123$";
+            user.FirstName = "Nitish";
+            user.LastName = "NS";
+            user.UserEmail = "342Nitish@gmail.com";
+            user.UserMob = "956896483";
+            user.Pswd = "Manish@123$";
 
             if (iuser.Register(user)) Console.WriteLine("User Added Successfully");
             else Console.WriteLine("There is an problem while adding the user");

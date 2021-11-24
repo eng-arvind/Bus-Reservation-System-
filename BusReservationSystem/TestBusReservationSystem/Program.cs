@@ -6,7 +6,8 @@ namespace TestBusReservationSystem
     {
         static void Main(string[] args)
         {
-            TestUserReg.UserRegister();
+            //TestUserReg.UserRegister();
+            TestAuthUser.Userlogin();
         }
     }
 }

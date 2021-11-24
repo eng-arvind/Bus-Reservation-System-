@@ -6,7 +6,7 @@ using BusReservationSystem.Models;
 
 namespace BusReservationSystem.DAL
 {
-    interface IAdmin
+   public interface IAdmin
     {
         public bool IsAdmin(string adminName, string pswd);
         public bool InsertBus(Bus newbus);

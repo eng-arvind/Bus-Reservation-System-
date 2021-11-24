@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusReservationSystem.Models;
-
+using BusReservationSystem.Exceptions;
 namespace BusReservationSystem.DAL
 {
     public class AdminImpl : IAdmin
@@ -12,7 +12,14 @@ namespace BusReservationSystem.DAL
         public bool DeleteBus(int busId)
         {
             var res = db.buses.Where(x => x.BusId == busId).FirstOrDefault();
-            db.buses.Remove(res);
+            if (res == null) throw new BusNotFound("Bus not found");
+            var sch = db.Schedules.Where(x => x.BusId == res.BusId).ToList();
+            foreach(var s in sch)
+            {
+                s.BusId = null;
+            }
+            db.SaveChanges();
+            db.Remove(res);
             var op = db.SaveChanges();
             if (op == 1)
                 return true;
@@ -25,9 +32,16 @@ namespace BusReservationSystem.DAL
         public bool DeleteRoute(int routeId)
         {
             var res = db.Routes.Where(x => x.RouteId == routeId).FirstOrDefault();
-            db.Routes.Remove(res);
+            if (res == null) throw new BusNotFound("Route not found");
+            var rt = db.Schedules.Where(x => x.RouteId == res.RouteId).ToList();
+            foreach (var s in rt)
+            {
+                s.BusId = null;
+            }
+            db.SaveChanges();
+            db.Remove(res);
             var op = db.SaveChanges();
-            if (op == 1)
+            if (op >= 1)
                 return true;
             else
                 return false;
@@ -37,9 +51,16 @@ namespace BusReservationSystem.DAL
         public bool DeleteSchedule(int schId)
         {
             var res = db.Schedules.Where(x => x.ScheduleId == schId).FirstOrDefault();
-            db.Schedules.Remove(res);
+            if (res == null) throw new BusNotFound("Schedule not found");
+            var dsc = db.Bookings.Where(x => x.ScheduleId == res.ScheduleId).ToList();
+            foreach (var s in dsc)
+            {
+                s.ScheduleId = null;
+            }
+            db.SaveChanges();
+            db.Remove(res);
             var op = db.SaveChanges();
-            if (op == 1)
+            if (op >= 1)
                 return true;
             else
                 return false;
@@ -111,13 +132,18 @@ namespace BusReservationSystem.DAL
 
         public Bus PrefferedTypeOfBus()
         {
-            Dictionary<int, int> bookings = new();
+            Dictionary<int?, int> bookings = new();
             foreach (var b in db.Bookings.ToList())
             {
-                bookings[(int)b.ScheduleId]++;
+               // int value;
+                if (bookings.ContainsKey(b.ScheduleId)==true)
+                    bookings[b.ScheduleId]++;
+                else
+                    bookings[b.ScheduleId] = 1;
             }
             int maxcount = bookings.Max(x => x.Value);
-            int maxbooking = 0;
+            int? maxbooking = 0;
+           /* Console.WriteLine(maxcount);*/
             foreach (var k in bookings)
             {
                 if (k.Value == maxcount)
@@ -145,13 +171,16 @@ namespace BusReservationSystem.DAL
 
         public Route RouteWithMaxReservation()
         {
-            Dictionary<int, int> bookings = new();
+            Dictionary<int?, int> bookings = new();
             foreach (var b in db.Bookings.ToList())
             {
-                bookings[(int)b.ScheduleId]++;
+                if (bookings.ContainsKey(b.ScheduleId) == true)
+                    bookings[b.ScheduleId]++;
+                else
+                    bookings[b.ScheduleId] = 1;
             }
             int maxcount = bookings.Max(x => x.Value);
-            int maxbooking = 0;
+            int? maxbooking = 0;
             foreach (var k in bookings)
             {
                 if (k.Value == maxcount)

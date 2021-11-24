@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusReservationSystem.Models;
-
+using BusReservationSystem.Exceptions;
 namespace BusReservationSystem.DAL
 {
     public class TicketImpl : ITicket
     {
         BRSDBContext db = new BRSDBContext();
+
+        //this will Insert Booking to booking table
         public bool BookTicket(Booking book)
         {
             db.Add(book);
@@ -52,7 +54,9 @@ namespace BusReservationSystem.DAL
         //this method will return User using email Id
         public UserReg GetUserByEmail(string email)
         {
-            return db.UserRegs.Where(x => x.UserEmail == email).FirstOrDefault();
+            UserReg user = db.UserRegs.Where(x => x.UserEmail == email).FirstOrDefault();
+            if (user == null) throw new UserNotFound($"The user with {email} email id is not regestered");
+            return user;
         }
 
         //This method will insert the seat to seat table
@@ -86,6 +90,7 @@ namespace BusReservationSystem.DAL
                              where s.JrnyDate >= journeyDate
                              join b in db.buses on s.BusId equals b.BusId
                              select b).ToList();
+            if (buses == null) throw new BusNotFound($"No bus is scheduled to {Dest} from {arrive} on {journeyDate}");
             return buses;
 
         }

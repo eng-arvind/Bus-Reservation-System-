@@ -6,7 +6,6 @@ namespace TestBusReservationSystem
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             try
             {
                 /* TestUserReg.UserRegister();*/
@@ -30,10 +29,7 @@ namespace TestBusReservationSystem
             {
                 Console.WriteLine(b.Message);
             }
-=======
-            //TestUserReg.UserRegister();
-            TestAuthUser.Userlogin();
->>>>>>> ae7c24f7ad2f91d35ee78fe05cc39233f78c9391
+
         }
 
     }

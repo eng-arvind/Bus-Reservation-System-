@@ -5797,16 +5797,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\nitish.kumar10\\.nuget\\packages\\": {}
->>>>>>> ae7c24f7ad2f91d35ee78fe05cc39233f78c9391
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
       "projectName": "BusReservationSystem",
       "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
@@ -5815,16 +5810,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
-      "projectName": "BusReservationSystem",
-      "projectPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
-      "packagesPath": "C:\\Users\\nitish.kumar10\\.nuget\\packages\\",
-      "outputPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\nitish.kumar10\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> ae7c24f7ad2f91d35ee78fe05cc39233f78c9391
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5886,5 +5871,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -8,11 +8,7 @@ namespace BusReservationSystem.DAL
 {
     public class AdminImpl : IAdmin
     {
-        readonly BRSDBContext db;
-        public AdminImpl(BRSDBContext db)
-        {
-            this.db = db;
-        }
+        BRSDBContext db = new();
         public bool DeleteBus(int busId)
         {
             var res = db.buses.Where(x => x.BusId == busId).FirstOrDefault();
@@ -91,6 +87,11 @@ namespace BusReservationSystem.DAL
             else
                 return false;
             /* throw new NotImplementedException();*/
+        }
+
+        public bool IsAdmin(string adminName, string pswd)
+        {
+            return (adminName == "Admin" && pswd == "Admin");
         }
 
         public decimal LastMnthProfit()

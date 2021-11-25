@@ -11,26 +11,85 @@ namespace TestBusReservationSystem
     class TestAuthUser
     {
         static readonly IAuthUser iuser = new AuthUserImpl();
-        static readonly UserReg user = new();
-        //public static void Userlogin()
-        //{
-        //    string useremail = "342Nitish@gmail.com";
-        //    string Password = "Manish@123$";
-        //    var user = iuser.Login(useremail, Password);
-        //    if (user != null)
-        //    {
-        //        Console.WriteLine(user.FirstName);
-        //        Console.WriteLine(user.LastName);
-        //        Console.WriteLine(user.UserEmail);
-        //        Console.WriteLine(user.UserMob);
-        //        Console.WriteLine(user.UsrAddress);
-        //        Console.WriteLine(user.Wallet);
-        //    }
+        static readonly ITicket ticket = new TicketImpl();
+        static readonly UserReg user = ticket.GetUserByEmail("3420karthik@gmail.com");
 
+        public static void userlogin()
+        {
+            string useremail = "342nitish@gmail.com";
+            string password = "manish@123$";
+            var user = iuser.Login(useremail, password);
+            if (user != null)
+            {
+                Console.WriteLine("login successful");
 
+            }
+        }
+        public static void getuser()
+        {
+            var user1 = iuser.GetProfile(user);
+            Console.WriteLine(user.FirstName);
+            Console.WriteLine(user.LastName);
+            Console.WriteLine(user.UserEmail);
+            Console.WriteLine(user.UserMob);
+            Console.WriteLine(user.UsrAddress);
+            Console.WriteLine(user.Wallet);
+        }
+        public static void GetReservations()
+        {
+            var reservations = iuser.GetLastReservations(user);
+            if(reservations==null || reservations.Count==0)
+            {
+                Console.WriteLine("No reservations found");
+                return;
+            }
+            foreach(var m in reservations)
+            {
+                Console.WriteLine(m.BookId+". "+m.BookStatus);
 
+            }
 
-        //}
-       
+        }
+        public static void AddMoneytoWallet()
+        {
+            bool added = iuser.AddMoneyWallet(user, 1000);
+            if(added)
+            {
+                Console.WriteLine("Money added to wallet "+user.Wallet);
+                
+            }
+            else
+            {
+                Console.WriteLine("Money not added to wallet");
+            }
+              
+        }
+        public static void PasswordReset()
+        {
+            user.Pswd = "Krish6579$";
+            bool changed = iuser.ResetPassword(user,user.UserEmail);
+            if(changed)
+            {
+                Console.WriteLine("password is resetted");
+            }
+            else
+            {
+                Console.WriteLine("Password reset is not successful");
+            }
+        }
+        public static void Profileupdate()
+        {
+            user.FirstName = "sohel";
+            bool changed = iuser.UpdateProfile(user, user.UserEmail);
+            if (changed)
+            {
+                Console.WriteLine("Profile got updated");
+            }
+            else
+            {
+                Console.WriteLine("Profile is not updated");
+            }
+
+        }
     }
 }

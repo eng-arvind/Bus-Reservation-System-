@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusReservationSystem", "BusReservationSystem\BusReservationSystem.csproj", "{D5A99E08-CC0F-4508-8013-DDF978A08382}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBusReservationSystem", "TestBusReservationSystem\TestBusReservationSystem.csproj", "{C80D76C3-0419-4AD1-86C6-46D89FAD962C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBusReservationSystem", "TestBusReservationSystem\TestBusReservationSystem.csproj", "{C80D76C3-0419-4AD1-86C6-46D89FAD962C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIBusReservationSystem", "UIBusReservationSystem\UIBusReservationSystem.csproj", "{0B576383-F759-4C60-9391-B1C552987A26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C80D76C3-0419-4AD1-86C6-46D89FAD962C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C80D76C3-0419-4AD1-86C6-46D89FAD962C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C80D76C3-0419-4AD1-86C6-46D89FAD962C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B576383-F759-4C60-9391-B1C552987A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B576383-F759-4C60-9391-B1C552987A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B576383-F759-4C60-9391-B1C552987A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B576383-F759-4C60-9391-B1C552987A26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

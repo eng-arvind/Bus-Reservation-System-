@@ -10,7 +10,7 @@ namespace BusReservationSystem.DAL
     {
         public List<Bus> SearchBusByLoc(string arrive, string Dest, DateTime jrnyDate);
         public Seat GetSeatBySeatId(int seatid);
-        public bool InsertSeat(Seat seat);
+        public bool InsertSeat(Seat seats);
         public Booking BookTicket(Booking book);
         public Booking UpdateTicket(Booking book, int bookId);
         public bool MakePayment(Payment pay);

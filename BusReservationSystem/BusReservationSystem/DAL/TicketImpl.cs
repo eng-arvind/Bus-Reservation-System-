@@ -71,14 +71,14 @@ namespace BusReservationSystem.DAL
         public bool InsertSeat(Seat seat)
         {
             db.Add(seat);
-            return db.SaveChanges() > 0;
+            return db.SaveChanges() == 1;
         }
 
         //This method will insert Payment to payment table
         public bool MakePayment(Payment pay)
         {
             db.Add(pay);
-            return db.SaveChanges() > 0;
+            return db.SaveChanges() == 1;
         }
 
         //this will remove the given list of seats
@@ -119,7 +119,7 @@ namespace BusReservationSystem.DAL
             //int? updtRtId = db.Schedules.Where(x => x.ScheduleId == updtSchId).FirstOrDefault().RouteId;
             //if (prevRtId != updtRtId) throw new RouteNotMatching("U selected different route");
             db.Bookings.Where(x => x.BookId == bookId).FirstOrDefault().ScheduleId = schId;
-            return db.SaveChanges() > 0;
+            return db.SaveChanges() == 1;
         }
 
         public Booking UpdateTicket(Booking book, int bookId)

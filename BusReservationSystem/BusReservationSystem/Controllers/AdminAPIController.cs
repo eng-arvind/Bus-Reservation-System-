@@ -14,7 +14,111 @@ namespace BusReservationSystem.Controllers
     [ApiController]
     public class AdminAPIController : ControllerBase
     {
-        IAdmin admin = new AdminImpl();
-        BRSDBContext db = new();
+        readonly IAdmin adm;
+        readonly BRSDBContext db;
+
+        public AdminAPIController(IAdmin it, BRSDBContext db)
+        {
+            this.adm = it;
+            this.db = db;
+        }
+        [HttpDelete]
+        //we are defining URL for every method, In api term it is called  Route
+        [Route("/api/AdminAPI/deleteBus/{id}")]
+        public bool Delete(int bid)
+        {
+            return adm.DeleteBus(bid);
+        }
+        [HttpDelete]
+        [Route("/api/AdminAPI/deleteRoute/{id}")]
+        [ActionName("Delete")]
+        public bool DeleteRoute(int rid)
+        {
+            return adm.DeleteRoute(rid);
+        }
+        [HttpDelete]
+        [Route("/api/AdminAPI/deleteSchedule/{id}")]
+        [ActionName("Delete")]
+        public bool DeleteSch(int sid)
+        {
+            return adm.DeleteSchedule(Convert.ToInt32(sid));
+        }
+        [HttpGet]
+        [Route("/api/AdminAPI/GetRegUNotBookedYet")]
+        public List<UserReg> Get()
+        {
+            return adm.GetRegUserNotBookedYet();
+        }
+        [HttpPost]
+        [Route("/api/AdminAPI/insertBus")]
+        public bool Post(Bus bs)
+        {
+            return adm.InsertBus(bs);
+        }
+        [HttpPost]
+        [Route("/api/AdminAPI/insertRoute")]
+        public bool Post(Route rt)
+        {
+            return adm.InsertRoute(rt);
+        }
+        [HttpPost]
+        [Route("/api/AdminAPI/insertSch")]
+        public bool Post(Schedule sc)
+        {
+            return adm.InsertSchedule(sc);
+        }
+        [HttpPost]
+        [Route("/api/AdminAPI/IsAdmin/{name}/{pass}")]
+        public bool Post(string name, string pass)
+        {
+            return adm.IsAdmin(name, pass);
+        }
+        [HttpGet]
+        [Route("/api/AdminAPI/LastMonthProfit")]
+        [ActionName("Get")]
+        public decimal GetLstMProf()
+        {
+            return adm.LastMnthProfit();
+        }
+
+        [HttpGet]
+        [Route("/api/AdminAPI/PreferedTypeOfBus")]
+        [ActionName("Get")]
+        public Bus GetPrefBus()
+        {
+            return adm.PrefferedTypeOfBus();
+        }
+        [HttpPost]
+        [Route("/api/AdminAPI/RestDetailsOFCust")]
+        public List<Booking> Post(DateTime dt)
+        {
+            return adm.ResDetailsOFCust(dt);
+        }
+
+        [HttpGet]
+        [Route("/api/AdminAPI/RouteWithMxReservation")]
+        [ActionName("Get")]
+        public Route GetRtwithMxRes()
+        {
+            return adm.RouteWithMaxReservation();
+        }
+        [HttpPut]
+        [Route("/api/AdminAPI/updateBus")]
+        public bool Put(Bus obj, int bid)
+        {
+            return adm.UpdateBus(obj, bid);
+        }
+        [HttpPut]
+        [Route("/api/AdminAPI/updateRoute")]
+        public bool Put(Route obj, int rid)
+        {
+            return adm.UpdateRoute(obj, rid);
+        }
+        [HttpPut]
+        [Route("/api/AdminAPI/updateSchedule")]
+        public bool Put(Schedule obj, int sid)
+        {
+            return adm.UpdateSchedule(obj, sid);
+        }
     }
 }

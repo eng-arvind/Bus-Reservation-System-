@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj": {}
+    "C:\\FinalProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
+    "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+        "projectUniqueName": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
         "projectName": "BusReservationSystem",
-        "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
-        "packagesPath": "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
+        "projectPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+        "packagesPath": "C:\\Users\\nitish.kumar10\\.nuget\\packages\\",
+        "outputPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nitish.kumar10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,17 +77,17 @@
         }
       }
     },
-    "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj": {
+    "C:\\FinalProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
+        "projectUniqueName": "C:\\FinalProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
         "projectName": "TestBusReservationSystem",
-        "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
-        "packagesPath": "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\obj\\",
+        "projectPath": "C:\\FinalProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
+        "packagesPath": "C:\\Users\\nitish.kumar10\\.nuget\\packages\\",
+        "outputPath": "C:\\FinalProject\\BusReservationSystem\\TestBusReservationSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nitish.kumar10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,8 +101,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
-                "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj"
+              "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
+                "projectPath": "C:\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj"
               }
             }
           }

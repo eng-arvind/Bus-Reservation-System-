@@ -42,9 +42,16 @@ namespace TestBusReservationSystem
                 //TestTicket.BusReserve();
                 //TestTicket.CancelTicket(23);
                 //TestTicket.UpdateSchedule();
-                TestTicket.GetTicketDet(11);
+                //TestTicket.GetTicketDet(11);
                 //**********************************
 
+                //*************************************
+                //TestAuthUser.userlogin();
+                //TestAuthUser.GetReservations();
+                //TestAuthUser.getuser();
+                //TestAuthUser.Profileupdate();
+                //TestAuthUser.AddMoneytoWallet();
+                TestAuthUser.PasswordReset();
             }
             catch(BusNotFound b)
             {

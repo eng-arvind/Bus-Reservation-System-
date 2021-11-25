@@ -90,18 +90,22 @@ namespace BusReservationSystem.DAL
         }
 
         //this will return List of buses travel from the given arrive loc to dest loc, on and after journeyDate
-        public List<BusScheduleJoin> SearchBusByLoc(string arrive, string Dest, DateTime journeyDate)
+        public List<Bus> SearchBusByLoc(string arrive, string Dest, DateTime journeyDate)
         {
             Route route = db.Routes.Where(x => x.Arrive == arrive && x.Dest == Dest).FirstOrDefault();
             if (route == null) throw new BusNotFound("Route not found");
             int routeId = route.RouteId;
-            var buses = (from bus in db.buses
+            var buses = from bus in db.buses
                         join sch in db.Schedules on bus.BusId equals sch.BusId
                         where sch.RouteId == routeId && sch.JrnyDate >= journeyDate
-                        select new BusScheduleJoin { BusId = bus.BusId, BusName = bus.BusName, ScheduleId = sch.ScheduleId, RouteId = sch.RouteId, JourneyDate = sch.JrnyDate, SeatAvail = sch.SeatAvl, Fare = sch.Fare }).ToList();
-            
-            if (buses == null) throw new BusNotFound($"No bus is scheduled to {Dest} from {arrive} on {journeyDate}");
-            return buses;
+                        select new { b = bus, Sch = sch };
+            List<Bus> buses1 = new();
+            foreach (var bus in buses)
+            {
+                buses1.Add(bus.b);
+            }
+            if (buses1 == null) throw new BusNotFound($"No bus is scheduled to {Dest} from {arrive} on {journeyDate}");
+            return buses1;
 
         }
 

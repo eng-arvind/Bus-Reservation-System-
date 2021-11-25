@@ -11,10 +11,13 @@ namespace BusReservationSystem.DAL
         BRSDBContext db = new BRSDBContext();
 
         //this will Insert Booking to booking table
-        public bool BookTicket(Booking book)
+        public Booking BookTicket(Booking book)
         {
             db.Add(book);
-            return db.SaveChanges() == 1;
+            var res = db.SaveChanges();
+            if (res == 1)
+                return db.Bookings.Where(x => x.BookId == db.Bookings.Max(x => x.BookId)).FirstOrDefault();
+            return null;
         }
 
         //This method will remove Booking using bookId
@@ -22,8 +25,13 @@ namespace BusReservationSystem.DAL
         {
             Booking booking = db.Bookings.Where(x => x.BookId == bookId).FirstOrDefault();
             db.Remove(booking); //Finally deleting the booking from booking table
-            return db.SaveChanges() == 1;
+            return db.SaveChanges() > 0;
 
+        }
+
+        public Payment GetPaymentByBookiId(int bookId)
+        {
+            return db.Payments.Where(x => x.BookId == bookId).FirstOrDefault();
         }
 
         //This method will return Schedule by using schedule Id
@@ -78,20 +86,26 @@ namespace BusReservationSystem.DAL
         {
             foreach (Seat seat in seats)
                 db.Remove(seat);
-            return db.SaveChanges() == 1;
+            return db.SaveChanges() > 0;
         }
 
         //this will return List of buses travel from the given arrive loc to dest loc, on and after journeyDate
         public List<Bus> SearchBusByLoc(string arrive, string Dest, DateTime journeyDate)
         {
-            //joining the route table and schedule table on the basis of routeId and selecting the joined table where journey date is greater than given date and again joing to the bus table on the basis of busID 
-            List<Bus> buses = (from r in db.Routes
-                             join s in db.Schedules on r.RouteId equals s.RouteId
-                             where s.JrnyDate >= journeyDate
-                             join b in db.buses on s.BusId equals b.BusId
-                             select b).ToList();
-            if (buses == null) throw new BusNotFound($"No bus is scheduled to {Dest} from {arrive} on {journeyDate}");
-            return buses;
+            Route route = db.Routes.Where(x => x.Arrive == arrive && x.Dest == Dest).FirstOrDefault();
+            if (route == null) throw new BusNotFound("Route not found");
+            int routeId = route.RouteId;
+            var buses = from bus in db.buses
+                        join sch in db.Schedules on bus.BusId equals sch.BusId
+                        where sch.RouteId == routeId && sch.JrnyDate >= journeyDate
+                        select new { b = bus, Sch = sch };
+            List<Bus> buses1 = new();
+            foreach (var bus in buses)
+            {
+                buses1.Add(bus.b);
+            }
+            if (buses1 == null) throw new BusNotFound($"No bus is scheduled to {Dest} from {arrive} on {journeyDate}");
+            return buses1;
 
         }
 
@@ -99,8 +113,21 @@ namespace BusReservationSystem.DAL
         public bool UpdateSchedule(int schId, int bookId)
         {
             //Changing the schedule id on booking table
+            //int? prevSchId = db.Bookings.Where(x => x.ScheduleId == schId).FirstOrDefault().ScheduleId;
+            //int? updtSchId = db.Schedules.Where(x => x.ScheduleId == schId).FirstOrDefault().ScheduleId;
+            //int? prevRtId = db.Schedules.Where(x => x.ScheduleId == prevSchId).FirstOrDefault().RouteId;
+            //int? updtRtId = db.Schedules.Where(x => x.ScheduleId == updtSchId).FirstOrDefault().RouteId;
+            //if (prevRtId != updtRtId) throw new RouteNotMatching("U selected different route");
             db.Bookings.Where(x => x.BookId == bookId).FirstOrDefault().ScheduleId = schId;
             return db.SaveChanges() == 1;
+        }
+
+        public Booking UpdateTicket(Booking book, int bookId)
+        {
+            var booking = db.Bookings.Where(x => x.BookId == bookId).FirstOrDefault();
+            booking.BookStatus = book.BookStatus;
+            db.SaveChanges();
+            return booking;
         }
     }
 }

@@ -8,6 +8,9 @@ namespace TestBusReservationSystem
         {
             try
             {
+                //**********************************
+                //Admin Modules
+
                 /* TestUserReg.UserRegister();*/
                 /*TestAdmin.InsertBuses();*/
                 /* TestAdmin.InsertRoute();*/
@@ -23,13 +26,35 @@ namespace TestBusReservationSystem
                 /*TestAdmin.UpdateSch();*/
                 /*TestAdmin.DelBus();*/
                 /* TestAdmin.DelRoute();*/
-                TestAdmin.DelSchedule();
+                //TestAdmin.DelSchedule();
+                //***********************************
+
+                //**********************************
+                //UserRegistraion Module
+
+                //TestUserReg.UserRegister();
+                //**********************************
+
+                //**********************************
+                // Ticket Modules
+
+                //TestTicket.SearchBus("Bangalore", "Chennai", Convert.ToDateTime("4/3/2020"));
+                //TestTicket.BusReserve();
+                //TestTicket.CancelTicket(23);
+                //TestTicket.UpdateSchedule();
+                TestTicket.GetTicketDet(11);
+                //**********************************
+
             }
             catch(BusNotFound b)
             {
                 Console.WriteLine(b.Message);
             }
-
+            catch (UserNotFound u)
+            {
+                Console.WriteLine(u.Message);
+                return;
+            }
         }
 
     }

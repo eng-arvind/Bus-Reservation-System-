@@ -14,7 +14,8 @@ namespace BusReservationSystem.DAL
         public bool AddMoneyWallet(UserReg user, decimal amt)
         {
             user.Wallet += amt;
-            return db.SaveChanges()==1;
+            db.Update(user);
+            return db.SaveChanges()>=1;
         }
 
         public List<Booking> GetLastReservations(UserReg user)

@@ -5723,11 +5723,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Karthik.ks\\.nuget\\packages\\": {}
+>>>>>>> bb59913e2e1b7a6750cea6a21f1f7087cb2e32f6
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
       "projectName": "TestBusReservationSystem",
       "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
@@ -5736,6 +5741,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
+      "projectName": "TestBusReservationSystem",
+      "projectPath": "C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\TestBusReservationSystem\\TestBusReservationSystem.csproj",
+      "packagesPath": "C:\\Users\\Karthik.ks\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\TestBusReservationSystem\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Karthik.ks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> bb59913e2e1b7a6750cea6a21f1f7087cb2e32f6
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5749,8 +5764,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
               "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj"
+=======
+            "C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
+              "projectPath": "C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj"
+>>>>>>> bb59913e2e1b7a6750cea6a21f1f7087cb2e32f6
             }
           }
         }
@@ -5779,7 +5799,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

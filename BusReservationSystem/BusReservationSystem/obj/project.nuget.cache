@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WQwDw3ZCVVaO5IiDIJxnrbkfqypSsh3O1KzY4iTJTxHq8Zkb8//ZViS1Dd8CwNw1stWLMP6UpbGlN3kcMaHvJQ==",
+  "dgSpecHash": "kALZkJxCoyiMs/z28Kl6lBqj9yG6qUQOK97yezIFKgnLfaXaT7u4NJ/H1JtJVtBNuvXpxNEc4wEZif4OHUWNqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+  "projectFilePath": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -102,12 +102,5 @@
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\BusReservationSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

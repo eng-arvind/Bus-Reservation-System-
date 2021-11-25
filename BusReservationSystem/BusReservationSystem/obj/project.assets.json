@@ -5802,11 +5802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+      "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
       "projectName": "BusReservationSystem",
-      "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+      "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
       "packagesPath": "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
+      "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5871,13 +5871,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Karthik.ks\\Desktop\\BusResSys\\BusReservationSystem\\BusReservationSystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

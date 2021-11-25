@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {}
+    "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
+    "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+        "projectUniqueName": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
         "projectName": "BusReservationSystem",
-        "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
+        "projectPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\BusReservationSystem.csproj",
         "packagesPath": "C:\\Users\\arvind.vishwakarma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\OurProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
+        "outputPath": "C:\\Users\\arvind.vishwakarma\\Desktop\\FinalProject\\BusReservationSystem\\BusReservationSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arvind.vishwakarma\\AppData\\Roaming\\NuGet\\NuGet.Config",

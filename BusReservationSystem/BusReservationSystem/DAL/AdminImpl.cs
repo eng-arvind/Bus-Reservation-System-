@@ -32,7 +32,7 @@ namespace BusReservationSystem.DAL
         public bool DeleteRoute(int routeId)
         {
             var res = db.Routes.Where(x => x.RouteId == routeId).FirstOrDefault();
-            if (res == null) throw new BusNotFound("Route not found");
+            if (res == null) throw new RouteNotFound($"Route with route id {routeId} is not found");
             var rt = db.Schedules.Where(x => x.RouteId == res.RouteId).ToList();
             foreach (var s in rt)
             {
@@ -51,7 +51,7 @@ namespace BusReservationSystem.DAL
         public bool DeleteSchedule(int schId)
         {
             var res = db.Schedules.Where(x => x.ScheduleId == schId).FirstOrDefault();
-            if (res == null) throw new BusNotFound("Schedule not found");
+            if (res == null) throw new ScheduleNotFound($"Schedule with schedule id {schId} is not found");
             var dsc = db.Bookings.Where(x => x.ScheduleId == res.ScheduleId).ToList();
             foreach (var s in dsc)
             {

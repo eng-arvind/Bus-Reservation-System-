@@ -42,7 +42,7 @@ namespace TestBusReservationSystem
                 //TestTicket.BusReserve();
                 //TestTicket.CancelTicket(23);
                 //TestTicket.UpdateSchedule();
-                TestTicket.GetTicketDet(10);
+                TestTicket.GetTicketDet(11);
                 //**********************************
 
             }

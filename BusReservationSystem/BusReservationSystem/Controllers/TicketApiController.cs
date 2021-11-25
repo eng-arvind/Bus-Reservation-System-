@@ -60,7 +60,7 @@ namespace BusReservationSystem.Controllers
 
         [HttpGet]
         [Route("/api/TicketApi/GetBusesByLoc/{arrive}/{dest}/{jrnyDate}")]
-        public List<Bus> GetBuses(string arrive, string dest, DateTime jrnyDate)
+        public List<BusScheduleJoin> GetBuses(string arrive, string dest, DateTime jrnyDate)
         {
             return it.SearchBusByLoc(arrive, dest, jrnyDate);
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using BusReservationSystem.Exceptions;
+using BusReservationSystem.Models;
 namespace TestBusReservationSystem
 {
     class Program
@@ -38,7 +39,8 @@ namespace TestBusReservationSystem
                 //**********************************
                 // Ticket Modules
 
-                //TestTicket.SearchBus("Bangalore", "Chennai", Convert.ToDateTime("4/3/2020"));
+                ADJ adj = new() { Arrive = "Bangalore", Dest = "Chennai", JrnyDate = "4/3/2020" };
+                TestTicket.SearchBus(adj);
                 //TestTicket.BusReserve();
                 //TestTicket.CancelTicket(23);
                 //TestTicket.UpdateSchedule();
@@ -51,7 +53,7 @@ namespace TestBusReservationSystem
                 //TestAuthUser.getuser();
                 //TestAuthUser.Profileupdate();
                 //TestAuthUser.AddMoneytoWallet();
-                TestAuthUser.PasswordReset();
+                //TestAuthUser.PasswordReset();
             }
             catch(BusNotFound b)
             {

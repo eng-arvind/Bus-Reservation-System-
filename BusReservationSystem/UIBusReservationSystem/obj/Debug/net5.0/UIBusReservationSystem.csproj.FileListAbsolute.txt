@@ -169,3 +169,5 @@ C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReser
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\UIBusReservationSystem.pdb
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\UIBusReservationSystem.genruntimeconfig.cache
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\Home\HomePage.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\AdminHome.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\AdminDashboard.cshtml.g.cs

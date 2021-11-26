@@ -110,9 +110,13 @@ namespace BusReservationSystem.DAL
             /* throw new NotImplementedException();*/
         }
 
-        public bool IsAdmin(string adminName, string pswd)
+        public AdminMaster IsAdmin(AdminMaster obj)
         {
-            return (adminName == "Admin" && pswd == "Admin");
+          if(obj.UserName == "Admin" && obj.UsrPswd == "Admin")
+            {
+                return db.AdminMasters.Where(x => x.UserName == "Admin").FirstOrDefault();
+            }
+            return null;
         }
 
         public decimal LastMnthProfit()

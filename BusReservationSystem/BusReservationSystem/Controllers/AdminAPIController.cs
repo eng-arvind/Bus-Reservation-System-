@@ -68,10 +68,10 @@ namespace BusReservationSystem.Controllers
             return adm.InsertSchedule(sc);
         }
         [HttpPost]
-        [Route("/api/AdminAPI/IsAdmin/{name}/{pass}")]
-        public bool Post(string name, string pass)
+        [Route("/api/AdminAPI/IsAdmin")]
+        public AdminMaster Post(AdminMaster obj)
         {
-            return adm.IsAdmin(name, pass);
+            return adm.IsAdmin(obj);
         }
         [HttpGet]
         [Route("/api/AdminAPI/LastMonthProfit")]

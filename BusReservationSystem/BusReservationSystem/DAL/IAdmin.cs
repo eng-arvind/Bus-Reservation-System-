@@ -8,7 +8,7 @@ namespace BusReservationSystem.DAL
 {
    public interface IAdmin
     {
-        public bool IsAdmin(string adminName, string pswd);
+        public AdminMaster IsAdmin(AdminMaster admn);
         public bool InsertBus(Bus newbus);
         public bool InsertRoute(Route newRoute);
         public bool InsertSchedule(Schedule newSch);

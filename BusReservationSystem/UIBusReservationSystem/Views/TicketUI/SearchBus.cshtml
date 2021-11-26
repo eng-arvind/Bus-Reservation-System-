@@ -1,0 +1,21 @@
+﻿@model List<BusReservationSystem.Models.BusScheduleJoin>
+@using(Html.BeginForm())
+{
+    <table>
+        <tr>
+            <th>Bus Name</th>
+            <th>Journey Date</th>
+            <th>Seat Available</th>
+            <th>Fare</th>
+        </tr>
+        @foreach(var m in Model)
+                {
+                    <tr>
+                        <td>@m.BusName</td>
+                        <td>@m.JourneyDate</td>
+                        <td>@m.SeatAvail</td>
+                        <td>@m.Fare</td>
+                    </tr>
+                }
+    </table>
+}

@@ -1,0 +1,17 @@
+﻿@using(Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>UserEmail</td>
+            <td>@Html.TextBox("UserEmail")</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBox("Password")</td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+    @Html.ValidationSummary()
+}

@@ -46,7 +46,7 @@ namespace UIBusReservationSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=TicketUI}/{action=HomePage}/{id?}");
+                    pattern: "{controller=Home}/{action=HomePage}/{id?}");
             });
         }
     }

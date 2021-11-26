@@ -18,7 +18,7 @@ namespace UIBusReservationSystem.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult HomePage()
         {
             return View();
         }

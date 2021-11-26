@@ -100,7 +100,8 @@ namespace BusReservationSystem.DAL
                          join sch in db.Schedules on bus.BusId equals sch.BusId
                          where sch.RouteId == routeId && sch.JrnyDate >= jrny
                          select new BusScheduleJoin { BusId = bus.BusId, BusName = bus.BusName, ScheduleId = sch.ScheduleId, RouteId = sch.RouteId, JourneyDate = sch.JrnyDate, SeatAvail = sch.SeatAvl, Fare = sch.Fare }).ToList();
-            
+            //select new { bus, sch };
+
             if (buses == null) throw new BusNotFound($"No bus is scheduled to {adj.Dest} from {adj.Arrive} on {adj.JrnyDate}");
             return buses;
 

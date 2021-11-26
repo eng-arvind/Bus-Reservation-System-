@@ -28,11 +28,11 @@ namespace BusReservationSystem.DAL
             return user;
         }
 
-        public UserReg Login(string email, string password)
+        public UserReg Login(Lgn lg)
         {
             //Login
-            var user = db.UserRegs.Where(x => x.UserEmail == email && x.Pswd==password).FirstOrDefault();
-            if (user == null) throw new UserNotFound($"The user with {email} email id is not regestered");
+            var user = db.UserRegs.Where(x => x.UserEmail == lg.UserEmail && x.Pswd==lg.Password).FirstOrDefault();
+            if (user == null) throw new UserNotFound($"The user with {lg.UserEmail} email id is not regestered");
             return user;
 
         }

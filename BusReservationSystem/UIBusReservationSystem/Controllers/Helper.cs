@@ -28,5 +28,23 @@ namespace UIBusReservationSystem.Controllers
             }
             return BusScheduleJoins;
         }
+
+        public static UserReg AuthenticateUser(Lgn lg)
+        {
+            UserReg isUser = null;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(localhost);
+                var resp = client.PostAsJsonAsync($"AuthUserAPI/Login",lg);
+                resp.Wait();
+                if (resp.Result.IsSuccessStatusCode)
+                {
+                    var readres = resp.Result.Content.ReadAsAsync<UserReg>();
+                    readres.Wait();
+                    isUser = readres.Result;
+                }
+            }
+            return isUser;
+        }
     }
 }

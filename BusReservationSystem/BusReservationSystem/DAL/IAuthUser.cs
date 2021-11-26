@@ -8,7 +8,7 @@ namespace BusReservationSystem.DAL
 {
     public interface IAuthUser
     {
-        public UserReg Login(String email, string password);
+        public UserReg Login(Lgn lg);
         public bool AddMoneyWallet(UserReg user, decimal amt);
         public List<Booking> GetLastReservations(UserReg user);
         public bool UpdateProfile(UserReg updated, string email);

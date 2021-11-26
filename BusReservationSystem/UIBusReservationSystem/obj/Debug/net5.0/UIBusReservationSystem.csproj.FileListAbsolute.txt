@@ -82,3 +82,4 @@ C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSyste
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\HomePage.cshtml.g.cs
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\SearchBus.cshtml.g.cs
+C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\Login.cshtml.g.cs

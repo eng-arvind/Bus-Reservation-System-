@@ -39,8 +39,8 @@ namespace TestBusReservationSystem
                 //**********************************
                 // Ticket Modules
 
-                ADJ adj = new() { Arrive = "Bangalore", Dest = "Chennai", JrnyDate = "4/3/2020" };
-                TestTicket.SearchBus(adj);
+                //ADJ adj = new() { Arrive = "Bangalore", Dest = "Chennai", JrnyDate = "4/3/2020" };
+                TestTicket.SearchBus("Bangalore", "Chennai", "4/3/2020");
                 //TestTicket.BusReserve();
                 //TestTicket.CancelTicket(23);
                 //TestTicket.UpdateSchedule();

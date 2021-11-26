@@ -16,9 +16,10 @@ namespace TestBusReservationSystem
 
         public static void userlogin()
         {
-            string useremail = "342nitish@gmail.com";
-            string password = "manish@123$";
-            var user = iuser.Login(useremail, password);
+            Lgn lg = new();
+            lg.UserEmail = "342nitish@gmail.com";
+            lg.Password = "manish@123$";
+            var user = iuser.Login(lg);
             if (user != null)
             {
                 Console.WriteLine("login successful");

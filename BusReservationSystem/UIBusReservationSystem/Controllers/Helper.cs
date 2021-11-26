@@ -11,13 +11,13 @@ namespace UIBusReservationSystem.Controllers
     public class Helper
     {
         static string localhost = "http://localhost:5863/api/";
-        public static List<BusScheduleJoin> GetBusScheduleJoins(ADJ adj)
+        public static List<BusScheduleJoin> GetBusScheduleJoins(string arrive, string dest, string jrnyDate)
         {
             List<BusScheduleJoin> BusScheduleJoins = new List<BusScheduleJoin>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(localhost);
-                var resp = client.GetAsync("TicketApi/GetBusesByLoc/"+adj);
+                var resp = client.GetAsync($"TicketApi/GetBusesByLoc/{arrive}/{dest}/{jrnyDate}");
                 resp.Wait();
                 if (resp.Result.IsSuccessStatusCode)
                 {

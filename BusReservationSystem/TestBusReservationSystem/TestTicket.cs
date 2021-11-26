@@ -15,9 +15,9 @@ namespace TestBusReservationSystem
         static IAdmin admin = new AdminImpl();
         static IAuthUser authUser = new AuthUserImpl();
 
-        public static void SearchBus(ADJ adj)
+        public static void SearchBus(string Arrive, string Dest, string JrnyDate)
         {
-            List<BusScheduleJoin> buses = ticket.SearchBusByLoc(adj);
+            List<BusScheduleJoin> buses = ticket.SearchBusByLoc(Arrive, Dest, JrnyDate);
             if (buses != null && buses.Count > 0)
             {
                 foreach (var bus in buses)

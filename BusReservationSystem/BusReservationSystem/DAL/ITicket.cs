@@ -8,7 +8,7 @@ namespace BusReservationSystem.DAL
 {
     public interface ITicket
     {
-        public List<BusScheduleJoin> SearchBusByLoc(ADJ adj);
+        public List<BusScheduleJoin> SearchBusByLoc(string arrive, string dest, string jrnyDate);
         public Seat GetSeatBySeatId(int seatid);
         public bool InsertSeat(Seat seats);
         public Booking BookTicket(Booking book);

@@ -19,17 +19,16 @@ namespace UIBusReservationSystem.Controllers
         [HttpPost]
         public IActionResult HomePage(int i = 0)
         {
-            ADJ adj = new();
-            adj.Arrive = Request.Form["from"];
-            adj.Dest = Request.Form["to"];
+            string Arrive = Request.Form["from"];
+            string Dest = Request.Form["to"];
             DateTime JrnyDate = Convert.ToDateTime(Request.Form["jrnyDate"]);
-            adj.JrnyDate = $"{JrnyDate.Month}-{JrnyDate.Day}-{JrnyDate.Year}";
-            return RedirectToAction("SearchBus", adj);
+            string jrnyDate = $"{JrnyDate.Month}-{JrnyDate.Day}-{JrnyDate.Year}";
+            return RedirectToAction("SearchBus", new { arrive = Arrive, dest=Dest, jrnydate = jrnyDate});
         }
 
-        public IActionResult SearchBus(ADJ adj)
+        public IActionResult SearchBus(string arrive, string dest, string jrnyDate)
         {
-            var buses = Helper.GetBusScheduleJoins(adj);
+            var buses = Helper.GetBusScheduleJoins(arrive, dest, jrnyDate);
             return View(buses);
         }
     }

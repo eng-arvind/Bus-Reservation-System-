@@ -1,0 +1,32 @@
+﻿@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>@Html.TextBox("Firstname")</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>@Html.TextBox("Secondname")</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Html.TextBox("Useremail")</td>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td>@Html.TextBox("Mobile")</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@Html.TextBox("Address")</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.TextBox("password")</td>
+        </tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+    </table>
+}

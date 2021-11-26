@@ -83,6 +83,9 @@ C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSyste
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\HomePage.cshtml.g.cs
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\SearchBus.cshtml.g.cs
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\Login.cshtml.g.cs
+<<<<<<< HEAD
+C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\UserRegUI\RegisterPage.cshtml.g.cs
+=======
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\appsettings.json
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\BusReservationSystem.Views.dll
@@ -171,3 +174,4 @@ C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReser
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\Home\HomePage.cshtml.g.cs
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\AdminHome.cshtml.g.cs
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\AdminDashboard.cshtml.g.cs
+>>>>>>> b04e9c93ee9657c394a5dc31e3fdecec801452bb

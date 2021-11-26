@@ -46,5 +46,23 @@ namespace UIBusReservationSystem.Controllers
             }
             return isUser;
         }
+
+        public static bool RegisterUser(UserReg user)
+        {
+            bool registered = false;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(localhost);
+                var resp = client.PostAsJsonAsync("UserRegApi/RegisterUser", user);
+                resp.Wait();
+                if (resp.Result.IsSuccessStatusCode)
+                {
+                    var readres = resp.Result.Content.ReadAsAsync<bool>();
+                    readres.Wait();
+                    registered = readres.Result;
+                }
+            }
+            return registered;
+        }
     }
 }

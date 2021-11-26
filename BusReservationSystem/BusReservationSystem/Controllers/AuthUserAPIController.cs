@@ -23,7 +23,7 @@ namespace BusReservationSystem.Controllers
         }
 
         [HttpPost]
-        [Route("/api/AuthUserAPI/Login/{email}/{password}")]
+        [Route("/api/AuthUserAPI/Login")]
         public UserReg Login(Lgn lg)
         {
             return ua.Login(lg);

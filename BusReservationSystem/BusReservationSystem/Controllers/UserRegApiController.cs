@@ -22,7 +22,7 @@ namespace BusReservationSystem.Controllers
             this.db = db;
         }
         [HttpPost]
-        [Route("api/UserRegApi/RegisterUser")]
+        [Route("/api/UserRegApi/RegisterUser")]
         public bool Post(UserReg user)
         {
             return iUser.Register(user);

@@ -1,0 +1,638 @@
+﻿@model List<BusReservationSystem.Models.Seat>
+@if (ViewData["User"] as BusReservationSystem.Models.UserReg != null)
+{
+    BusReservationSystem.Models.UserReg user = ViewData["User"] as BusReservationSystem.Models.UserReg;
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
+        <img style="width:30px;height:30px;" src="~/Images/logo.png" />
+        <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="font-size:20px;font-weight:bold">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Terms of Use</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="color:white;float:right">
+                <li style="margin: 10px; font-size: 15px"><span class="glyphicon glyphicon-user"></span>Hi, @user.FirstName</li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("HomePage","Home")"><span class="glyphicon glyphicon-log-in"></span>SignOut</a></li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("DashBoard","AuthUserUI",user)"><span class="glyphicon glyphicon-log-in"></span>DashBoard</a></li>
+            </ul>
+        </div>
+    </nav>
+}
+else
+{
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
+        <img style="width:30px;height:30px;" src="~/Images/logo.png" />
+        <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="font-size:20px;font-weight:bold">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Terms of Use</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="color:white;float:right">
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("RegisterPage", "UserRegUI")"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("Login", "AuthUserUI")"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+}
+
+<form method="post">
+    <link rel="stylesheet" href="~/css/SeatsStyle.css" />
+
+    <div class="plane" style="border:1px solid black">
+        <ol class="cabin fuselage">
+            <li class="row row--1">
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        @{ bool isBooked1 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 1)
+                                {
+                                    isBooked1 = true;
+                                    <input type="checkbox" disabled id="1" value=1 name="Seats" />
+                                    <label for="1">1A</label>
+                                }
+                            }
+                            @if (isBooked1 == false)
+                            {
+                                <input type="checkbox" id="1" value=1 name="Seats" />
+                                <label for="1">1A</label>
+                            }
+                        }
+
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked2 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 2)
+                                {
+                                    isBooked2 = true;
+                                    <input type="checkbox" disabled id="2" value=2 name="Seats" />
+                                    <label for="2">2A</label>
+                                }
+                            }
+                            @if (isBooked2 == false)
+                            {
+                                <input type="checkbox" id="2" value=2 name="Seats" />
+                                <label for="2">2A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked3 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 3)
+                                {
+                                    isBooked3 = true;
+                                    <input type="checkbox" disabled id="3" value=3 name="Seats" />
+                                    <label for="3">3A</label>
+                                }
+                            }
+                            @if (isBooked3 == false)
+                            {
+                                <input type="checkbox" id="3" value=3 name="Seats" />
+                                <label for="3">3A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked4 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 4)
+                                {
+                                    isBooked4 = true;
+                                    <input type="checkbox" disabled id="4" value=4 name="Seats" />
+                                    <label for="4">4A</label>
+                                }
+                            }
+                            @if (isBooked4 == false)
+                            {
+                                <input type="checkbox" id="4" value=4 name="Seats" />
+                                <label for="4">4A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked5 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 5)
+                                {
+                                    isBooked5 = true;
+                                    <input type="checkbox" disabled id="5" value=5 name="Seats" />
+                                    <label for="5">5A</label>
+                                }
+                            }
+                            @if (isBooked5 == false)
+                            {
+                                <input type="checkbox" id="5" value=5 name="Seats" />
+                                <label for="5">5A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked6 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 6)
+                                {
+                                    isBooked6 = true;
+                                    <input type="checkbox" disabled id="6" value=6 name="Seats" />
+                                    <label for="6">6A</label>
+                                }
+                            }
+                            @if (isBooked6 == false)
+                            {
+                                <input type="checkbox" id="6" value=6 name="Seats" />
+                                <label for="6">6A</label>
+                            }
+                        }
+                    </li>
+                </ol>
+            </li>
+            <li class="row row--2">
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        @{ bool isBooked7 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 7)
+                                {
+                                    isBooked7 = true;
+                                    <input type="checkbox" disabled id="7" value=7 name="Seats" />
+                                    <label for="7">7A</label>
+                                }
+                            }
+                            @if (isBooked7 == false)
+                            {
+                                <input type="checkbox" id="7" value=7 name="Seats" />
+                                <label for="7">7A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked8 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 8)
+                                {
+                                    isBooked8 = true;
+                                    <input type="checkbox" disabled id="8" value=8 name="Seats" />
+                                    <label for="8">8A</label>
+                                }
+                            }
+                            @if (isBooked8 == false)
+                            {
+                                <input type="checkbox" id="8" value=8 name="Seats" />
+                                <label for="8">8A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked9 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 9)
+                                {
+                                    isBooked9 = true;
+                                    <input type="checkbox" disabled id="9" value=9 name="Seats" />
+                                    <label for="9">9A</label>
+                                }
+                            }
+                            @if (isBooked9 == false)
+                            {
+                                <input type="checkbox" id="9" value=9 name="Seats" />
+                                <label for="9">9A</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked10 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 10)
+                                {
+                                    isBooked10 = true;
+                                    <input type="checkbox" disabled id="10" value=10 name="Seats" />
+                                    <label for="10">10</label>
+                                }
+                            }
+                            @if (isBooked10 == false)
+                            {
+                                <input type="checkbox" id="10" value=10 name="Seats" />
+                                <label for="10">10</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked11 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 11)
+                                {
+                                    isBooked11 = true;
+                                    <input type="checkbox" disabled id="11" value=11 name="Seats" />
+                                    <label for="11">11</label>
+                                }
+                            }
+                            @if (isBooked11 == false)
+                            {
+                                <input type="checkbox" id="11" value=11 name="Seats" />
+                                <label for="11">11</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked12 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 12)
+                                {
+                                    isBooked12 = true;
+                                    <input type="checkbox" disabled id="12" value=12 name="Seats" />
+                                    <label for="12">12</label>
+                                }
+                            }
+                            @if (isBooked12 == false)
+                            {
+                                <input type="checkbox" id="12" value=12 name="Seats" />
+                                <label for="12">12</label>
+                            }
+                        }
+                    </li>
+                </ol>
+            </li>
+            <li class="row row--3">
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        @{ bool isBooked13 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 13)
+                                {
+                                    isBooked13 = true;
+                                    <input type="checkbox" disabled id="13" />
+                                    <label for="13">13</label>
+                                }
+                            }
+                            @if (isBooked13 == false)
+                            {
+                                <input type="checkbox" id="13" value=13 name="Seats" />
+                                <label for="13">13</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked14 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 14)
+                                {
+                                    isBooked14 = true;
+                                    <input type="checkbox" disabled id="14" />
+                                    <label for="14">14</label>
+                                }
+                            }
+                            @if (isBooked14 == false)
+                            {
+                                <input type="checkbox" id="14" value=14 name="Seats" />
+                                <label for="14">14</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked15 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 15)
+                                {
+                                    isBooked15 = true;
+                                    <input type="checkbox" disabled id="15" />
+                                    <label for="15">15</label>
+                                }
+                            }
+                            @if (isBooked15 == false)
+                            {
+                                <input type="checkbox" id="15" value=15 name="Seats" />
+                                <label for="15">15</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked16 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 16)
+                                {
+                                    isBooked16 = true;
+                                    <input type="checkbox" disabled id="16" />
+                                    <label for="16">16</label>
+                                }
+                            }
+                            @if (isBooked16 == false)
+                            {
+                                <input type="checkbox" id="16" value=16 name="Seats" />
+                                <label for="16">16</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked17 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 17)
+                                {
+                                    isBooked17 = true;
+                                    <input type="checkbox" disabled id="17" />
+                                    <label for="17">17</label>
+                                }
+                            }
+                            @if (isBooked17 == false)
+                            {
+                                <input type="checkbox" id="17" value=17 name="Seats" />
+                                <label for="17">17</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked18 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 18)
+                                {
+                                    isBooked18 = true;
+                                    <input type="checkbox" disabled id="18" />
+                                    <label for="18">18</label>
+                                }
+                            }
+                            @if (isBooked18 == false)
+                            {
+                                <input type="checkbox" id="18" value=18 name="Seats" />
+                                <label for="18">18</label>
+                            }
+                        }
+                    </li>
+                </ol>
+            </li>
+            <li class="row row--4">
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        @{ bool isBooked19 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 19)
+                                {
+                                    isBooked19 = true;
+                                    <input type="checkbox" disabled id="19" />
+                                    <label for="19">19</label>
+                                }
+                            }
+                            @if (isBooked19 == false)
+                            {
+                                <input type="checkbox" id="19" value=19 name="Seats" />
+                                <label for="19">19</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked20 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 20)
+                                {
+                                    isBooked20 = true;
+                                    <input type="checkbox" disabled id="20" />
+                                    <label for="20">20</label>
+                                }
+                            }
+                            @if (isBooked20 == false)
+                            {
+                                <input type="checkbox" id="20" value=20 name="Seats" />
+                                <label for="20">20</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked21 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 21)
+                                {
+                                    isBooked21 = true;
+                                    <input type="checkbox" disabled id="21" />
+                                    <label for="21">21</label>
+                                }
+                            }
+                            @if (isBooked21 == false)
+                            {
+                                <input type="checkbox" id="21" value=21 name="Seats" />
+                                <label for="21">21</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked22 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 22)
+                                {
+                                    isBooked22 = true;
+                                    <input type="checkbox" disabled id="22" />
+                                    <label for="22">22</label>
+                                }
+                            }
+                            @if (isBooked22 == false)
+                            {
+                                <input type="checkbox" id="22" value=22 name="Seats" />
+                                <label for="22">22</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked23 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 23)
+                                {
+                                    isBooked23 = true;
+                                    <input type="checkbox" disabled id="23" />
+                                    <label for="23">23</label>
+                                }
+                            }
+                            @if (isBooked23 == false)
+                            {
+                                <input type="checkbox" id="23" value=23 name="Seats" />
+                                <label for="23">23</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked24 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 24)
+                                {
+                                    isBooked24 = true;
+                                    <input type="checkbox" disabled id="24" />
+                                    <label for="24">24</label>
+                                }
+                            }
+                            @if (isBooked24 == false)
+                            {
+                                <input type="checkbox" id="24" value=24 name="Seats" />
+                                <label for="24">24</label>
+                            }
+                        }
+                    </li>
+                </ol>
+            </li>
+            <li class="row row--5">
+                <ol class="seats" type="A">
+                    <li class="seat">
+                        @{ bool isBooked25 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 25)
+                                {
+                                    isBooked25 = true;
+                                    <input type="checkbox" disabled id="25" />
+                                    <label for="25">25</label>
+                                }
+                            }
+                            @if (isBooked25 == false)
+                            {
+                                <input type="checkbox" id="25" value=25 name="Seats" />
+                                <label for="25">25</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked26 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 26)
+                                {
+                                    isBooked26 = true;
+                                    <input type="checkbox" disabled id="26" />
+                                    <label for="26">26</label>
+                                }
+                            }
+                            @if (isBooked26 == false)
+                            {
+                                <input type="checkbox" id="26" value=26 name="Seats" />
+                                <label for="26">26</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked27 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 27)
+                                {
+                                    isBooked27 = true;
+                                    <input type="checkbox" disabled id="27" />
+                                    <label for="27">27</label>
+                                }
+                            }
+                            @if (isBooked27 == false)
+                            {
+                                <input type="checkbox" id="27" value=27 name="Seats" />
+                                <label for="27">27</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked28 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 28)
+                                {
+                                    isBooked28 = true;
+                                    <input type="checkbox" disabled id="28" />
+                                    <label for="28">28</label>
+                                }
+                            }
+                            @if (isBooked28 == false)
+                            {
+                                <input type="checkbox" id="28" value=28 name="Seats" />
+                                <label for="28">28</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked29 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 29)
+                                {
+                                    isBooked29 = true;
+                                    <input type="checkbox" disabled id="29" />
+                                    <label for="29">29</label>
+                                }
+                            }
+                            @if (isBooked29 == false)
+                            {
+                                <input type="checkbox" id="29" value=29 name="Seats" />
+                                <label for="29">29</label>
+                            }
+                        }
+                    </li>
+                    <li class="seat">
+                        @{ bool isBooked30 = false;
+                            @foreach (var seat in Model)
+                            {
+                                @if (seat.SeatId == 30)
+                                {
+                                    isBooked30 = true;
+                                    <input type="checkbox" disabled id="30" />
+                                    <label for="30">30</label>
+                                }
+                            }
+                            @if (isBooked30 == false)
+                            {
+                                <input type="checkbox" id="30" value=30 name="Seats" />
+                                <label for="30">30</label>
+                            }
+                        }
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <input hidden type="text" name="UserID" value=@ViewData["UserId"] />
+        <input type="submit" />
+        @Html.ValidationSummary(true);
+    </div>
+
+</form>
+<footer style="position:absolute;bottom:1px;width:100%;height:50px;background-color:darkgrey">
+
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://globallogic.com/"> GlobalBusSeva.com</a>
+    </div>
+</footer>

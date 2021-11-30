@@ -1,3 +1,7 @@
 ﻿<StaticWebAssets Version="1.0">
+<<<<<<< HEAD
+  <ContentRoot BasePath="_content/BusReservationSystem" Path="C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\BusReservationSystem\wwwroot\" />
+=======
   <ContentRoot BasePath="_content/BusReservationSystem" Path="C:\FinalProject\BusReservationSystem\BusReservationSystem\wwwroot\" />
+>>>>>>> 282ce721476c8aa043afda5eca0831615c0677e6
 </StaticWebAssets>

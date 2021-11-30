@@ -45,13 +45,13 @@ namespace TestBusReservationSystem
                 Console.WriteLine("Schedule Not Inserted");
         }
 
-        public static void isAdmine()
-        {
-            if (admin.IsAdmin("Admin","Admin"))
-                Console.WriteLine("Login Successfully!");
-            else
-                Console.WriteLine(" Not Login");
-        }
+        //public static void isAdmine()
+        //{
+        //    if (admin.IsAdmin("Admin","Admin"))
+        //        Console.WriteLine("Login Successfully!");
+        //    else
+        //        Console.WriteLine(" Not Login");
+        //}
 
         public static void LastMonthProf()
         {

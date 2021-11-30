@@ -1,4 +1,7 @@
-﻿<div>
+﻿@model BusReservationSystem.Models.UserReg
+
+@if (Model.FirstName!=null)
+{
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
         <img style="width:30px;height:30px;" src="~/Images/logo.png" />
         <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
@@ -18,12 +21,42 @@
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right" style="color:white;float:right">
-                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li style="margin: 10px; font-size: 15px"><span class="glyphicon glyphicon-user"></span>Hi, @Model.FirstName</li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("DashBoard", "AuthUserUI", Model)"><span class="glyphicon glyphicon-log-in"></span>DashBoard</a></li>
+            </ul>
+        </div>
+    </nav>
+}
+else
+{
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
+        <img style="width:30px;height:30px;" src="~/Images/logo.png" />
+        <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="font-size:20px;font-weight:bold">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Terms of Use</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="color:white;float:right">
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("RegisterPage","UserRegUI")"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("Login","AuthUserUI")"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("AdminHome","AdminUI")"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a></li>
             </ul>
         </div>
     </nav>
+} 
+
+<form method="post">
     <div style="width: 100%; height: 100%">
         <div style="position:absolute;width:100%">
             <img src="~/Images/homeimg.jpg" style="width:100%;height:550px" />
@@ -32,28 +65,30 @@
         <div style="display:inline-flex;position:relative;z-index:2;margin-top:250px;margin-left:33%">
             <div class="form-outline">
                 <input style="height:40px;" type="search" id="form1" class="form-control" placeholder="From"
-                       aria-label="Search" />
+                       aria-label="Search" name="from" />
             </div>
             <div class="form-outline">
                 <input style="height:40px;" type="search" id="form1" class="form-control" placeholder="To"
-                       aria-label="Search" />
+                       aria-label="Search" name="to" />
             </div>
+            <input hidden name="UserId" value=@Model.UserEmail />
             <div class="form-outline">
-                <input style="height:40px;" type="datetime-local" class="form-control" placeholder="Date"/>
+                <input style="height:40px;" type="datetime-local" class="form-control" placeholder="Date" name="jrnyDate" />
             </div>
-
-            <button style="height:40px;width:60px;background-color:darkred;color:white" type="button" class="btn">
+            <button style="height:40px;width:60px;background-color:darkred;color:white" type="submit" class="btn">
                 Search
             </button>
 
         </div>
+        <label>Update</label>
     </div>
-    <footer style="position:absolute;bottom:1px;width:100%;height:50px;background-color:darkgrey">
+</form>
+<footer style="position:absolute;bottom:1px;width:100%;height:50px;background-color:darkgrey">
 
-        <div class="footer-copyright text-center py-3">
-            © 2020 Copyright:
-            <a href="https://globallogic.com/"> GlobalBusSeva.com</a>
-        </div>
-    </footer>
+    <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://globallogic.com/"> GlobalBusSeva.com</a>
+    </div>
+</footer>
 </div>
 

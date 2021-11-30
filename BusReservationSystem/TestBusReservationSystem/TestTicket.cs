@@ -45,9 +45,9 @@ namespace TestBusReservationSystem
             if (admin.UpdateSchedule(schedule,1)) Console.WriteLine("Cancelled Seats added to schedule table");
             else Console.WriteLine("There is a prblm while updating the available seats");
 
-            Payment payment = ticket.GetPaymentByBookiId(bookid);
-            if (authUser.AddMoneyWallet(user, (decimal)payment.TotalAmt)) Console.WriteLine("refunded successfully");
-            else Console.WriteLine("Refund not successfull");
+            //Payment payment = ticket.GetPaymentByBookiId(bookid);
+            //if (authUser.AddMoneyWallet(user, (decimal)payment.TotalAmt)) Console.WriteLine("refunded successfully");
+            //else Console.WriteLine("Refund not successfull");
 
             if (ticket.CancelTicket(bookid)) Console.WriteLine("Finally cancelled the ticket");
             else Console.WriteLine("Ticket cancellation not successfull");
@@ -83,7 +83,7 @@ namespace TestBusReservationSystem
                 {
                     if (user.Wallet >= payment.TotalAmt)
                     {
-                        authUser.AddMoneyWallet(user, (decimal)(0 - payment.TotalAmt));
+                        //authUser.AddMoneyWallet(user, (decimal)(0 - payment.TotalAmt));
                         booking1.BookStatus = "Booked";
                         booking1 = ticket.UpdateTicket(booking1, booking1.BookId);
                         ticket.MakePayment(payment);
@@ -111,11 +111,11 @@ namespace TestBusReservationSystem
 
         }
 
-        public static void UpdateSchedule()
-        {
-            if (ticket.UpdateSchedule(3,10)) Console.WriteLine("Updated");
-            else Console.WriteLine("Not updated");
-        }
+        //public static void UpdateSchedule()
+        //{
+        //    if (ticket.UpdateSchedule(3,10)) Console.WriteLine("Updated");
+        //    else Console.WriteLine("Not updated");
+        //}
 
         public static void GetTicketDet(int bookId)
         {

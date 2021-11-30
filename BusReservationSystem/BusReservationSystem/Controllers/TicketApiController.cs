@@ -59,6 +59,20 @@ namespace BusReservationSystem.Controllers
         }
 
         [HttpGet]
+        [Route("/api/TicketApi/GetBusById/{busId}")]
+        public Bus GetBus(int busId)
+        {
+            return it.GetBusById(busId);
+        }
+
+        [HttpGet]
+        [Route("/api/TicketApi/GetBookingsBySchId/{schId}")]
+        public List<Booking> GetBookingsBySchId(int schId)
+        {
+            return it.GetBookingsBySchId(schId);
+        }
+
+        [HttpGet]
         [Route("/api/TicketApi/GetBusesByLoc/{Arrive}/{Dest}/{JrnyDate}")]
         public List<BusScheduleJoin> GetBuses(string Arrive, string Dest, string JrnyDate)
         {
@@ -93,6 +107,19 @@ namespace BusReservationSystem.Controllers
             return it.GetTicketDetails(bookId);
         }
 
+        [HttpGet]
+        [Route("/api/TicketApi/GetLastBookId")]
+        public int GetLastBookId()
+        {
+            return it.GetLastBookId();
+        }
+        [HttpGet]
+        [Route("/api/TicketApi/GetRouteById/{routeId}")]
+        public Route GetRouteById(int routeId)
+        {
+            return it.GetRouteById(routeId);
+        }
+
         [HttpPut]
         [Route("/api/TicketApi/UpdateTicket/{bookId}")]
         public Booking UpdateTicket(Booking uptdTicket, int bookId)
@@ -100,14 +127,14 @@ namespace BusReservationSystem.Controllers
             return it.UpdateTicket(uptdTicket, bookId);
         }
 
-        [HttpPut]
-        [Route("/api/TicketApi/PostponeSchedule/{schID}/{bookId}")]
-        public bool PostponeSchedule(int schId, int bookId)
-        {
-            return it.UpdateSchedule(schId, bookId);
-        }
+        //[HttpPut]
+        //[Route("/api/TicketApi/PostponeSchedule/{schID}/{bookId}")]
+        //public bool PostponeSchedule(int schId, int bookId)
+        //{
+        //    return it.UpdateSchedule(schId, bookId);
+        //}
 
-        [HttpDelete]
+        [HttpPut]
         [Route("/api/TicketApi/DeleteSeats")]
         public bool DeleteSeats(List<Seat> seats)
         {
@@ -119,6 +146,18 @@ namespace BusReservationSystem.Controllers
         public bool DeleteTicket(int bookId)
         {
             return it.CancelTicket(bookId);
+        }
+        [HttpPut]
+        [Route("/api/TicketApi/UpdateSchedule/{schId}")]
+        public bool UpdateSchedule(Schedule schedule, int schId)
+        {
+            return it.UpdateSchedule(schedule, schId);
+        }
+        [HttpDelete]
+        [Route("/api/TicketApi/DeletePayment/{payId}")]
+        public bool DeletePayment(int payId)
+        {
+            return it.RemovePaymentbyId(payId);
         }
     }
 }

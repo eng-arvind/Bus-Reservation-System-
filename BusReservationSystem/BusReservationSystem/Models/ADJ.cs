@@ -7,8 +7,7 @@ namespace BusReservationSystem.Models
 {
     public class ADJ
     {
-        public string Arrive { get; set; }
-        public string Dest { get; set; }
-        public string JrnyDate { get; set; }
+        public UserReg user { get; set; }
+        public decimal amt { get; set; }
     }
 }

@@ -88,11 +88,11 @@ namespace BusReservationSystem.Controllers
         {
             return adm.PrefferedTypeOfBus();
         }
-        [HttpGet]
-        [Route("/api/AdminAPI/RestDetailsOFCust/{dt}")]
-        public List<Booking> Get(string dt)
+        [HttpPost]
+        [Route("/api/AdminAPI/RestDetailsOFCust")]
+        public List<Booking> Post(DateTime dt)
         {
-            return adm.ResDetailsOFCust(Convert.ToDateTime(dt));
+            return adm.ResDetailsOFCust(dt);
         }
 
         [HttpGet]

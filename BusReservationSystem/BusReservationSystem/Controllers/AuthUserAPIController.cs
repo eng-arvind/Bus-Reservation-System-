@@ -15,9 +15,11 @@ namespace BusReservationSystem.Controllers
     {
         readonly IAuthUser ua;
         readonly BRSDBContext db;
+        readonly ITicket it;
 
-        public AuthUserAPIController(IAuthUser ua, BRSDBContext db)
+        public AuthUserAPIController(IAuthUser ua, BRSDBContext db, ITicket it)
         {
+            this.it = it;
             this.ua = ua;
             this.db = db;
         }
@@ -28,18 +30,19 @@ namespace BusReservationSystem.Controllers
         {
             return ua.Login(lg);
         }
-        [HttpPost]
-        [Route("/api/AuthUserAPI/AddMoneyWallet/{amt}")]
+        [HttpPut]
+        [Route("/api/AuthUserAPI/AddMoneyWallet")]
 
-        public bool AddMoneyWallet(UserReg user, decimal amt)
+        public bool AddMoneyWallet(ADJ adj)
         {
-            return ua.AddMoneyWallet(user, amt);
+            return ua.AddMoneyWallet(adj);
         }
         [HttpGet]
-        [Route("/api/AuthUserAPI/GetLastReservations")]
+        [Route("/api/AuthUserAPI/GetLastReservations/{userId}")]
 
-        public List<Booking> GetLastReservations(UserReg user)
+        public List<Booking> GetLastReservations(string userId)
         {
+            UserReg user = it.GetUserByEmail(userId);
             return ua.GetLastReservations(user);
         }
         [HttpPut]

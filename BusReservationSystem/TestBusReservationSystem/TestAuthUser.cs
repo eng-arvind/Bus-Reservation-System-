@@ -51,20 +51,20 @@ namespace TestBusReservationSystem
             }
 
         }
-        public static void AddMoneytoWallet()
-        {
-            bool added = iuser.AddMoneyWallet(user, 1000);
-            if(added)
-            {
-                Console.WriteLine("Money added to wallet "+user.Wallet);
+        //public static void AddMoneytoWallet()
+        //{
+        //    bool added = iuser.AddMoneyWallet(user, 1000);
+        //    if(added)
+        //    {
+        //        Console.WriteLine("Money added to wallet "+user.Wallet);
                 
-            }
-            else
-            {
-                Console.WriteLine("Money not added to wallet");
-            }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Money not added to wallet");
+        //    }
               
-        }
+        //}
         public static void PasswordReset()
         {
             user.Pswd = "Krish6579$";

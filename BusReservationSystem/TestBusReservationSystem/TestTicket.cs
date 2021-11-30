@@ -111,19 +111,18 @@ namespace TestBusReservationSystem
 
         }
 
-<<<<<<< HEAD
+
       /*  public static void UpdateSchedule()
         {
             if (ticket.UpdateSchedule(3,10)) Console.WriteLine("Updated");
             else Console.WriteLine("Not updated");
         }*/
-=======
+
         //public static void UpdateSchedule()
         //{
         //    if (ticket.UpdateSchedule(3,10)) Console.WriteLine("Updated");
         //    else Console.WriteLine("Not updated");
         //}
->>>>>>> 342cda93ebc3a5e31d91dc4e8fd585cc2954ee3b
 
         public static void GetTicketDet(int bookId)
         {

@@ -99,7 +99,7 @@ namespace UIBusReservationSystem.Controllers
 
             return View();
         }
-<<<<<<< HEAD
+
         [HttpPost]
         public IActionResult AdminDashboard(string command,Bus B,Route R, Schedule S)
         {
@@ -277,31 +277,67 @@ namespace UIBusReservationSystem.Controllers
             return View(busobj);
         }
         [HttpPost]
-        public IActionResult EditBus()
+        public IActionResult EditBus(Bus bus, int id = 0)
         {
+            id = bus.BusId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.PutAsJsonAsync($"AdminAPI/updateBus/{id}", bus);
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
         public IActionResult DeleteBus(int ID)
         {
-
             Bus busobj = Helper.GetBusById(ID);
 
             return View(busobj);
         }
-        [HttpDelete]
-        public IActionResult DeleteBus()
+        [HttpPost]
+        public IActionResult DeleteBus(Bus bus)
         {
+            int id = bus.BusId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.DeleteAsync("AdminAPI/deleteBusById/" + id);
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
         public IActionResult EditRoute(int ID)
         {
             Route rtobj = Helper.GetRouteById(ID);
 
+
             return View(rtobj);
         }
         [HttpPost]
-        public IActionResult EditRoute()
+        public IActionResult EditRoute(Route route, int id = 0)
         {
+            id = route.RouteId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.PutAsJsonAsync($"AdminAPI/updateRoute/{id}", route);
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
         public IActionResult DeleteRoute(int ID)
@@ -310,9 +346,21 @@ namespace UIBusReservationSystem.Controllers
 
             return View(rtobj);
         }
-        [HttpDelete]
-        public IActionResult DeleteRoute()
+        [HttpPost]
+        public IActionResult DeleteRoute(Route route, int id = 0)
         {
+            id = route.RouteId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.DeleteAsync($"AdminAPI/deleteRoute/{id}");
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
         public IActionResult EditSch(int ID)
@@ -322,8 +370,20 @@ namespace UIBusReservationSystem.Controllers
             return View(schobj);
         }
         [HttpPost]
-        public IActionResult EditSch()
+        public IActionResult EditSch(Schedule sch, int id = 0)
         {
+            id = sch.ScheduleId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.PutAsJsonAsync($"AdminAPI/updateSchedule/{id}", sch);
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
         public IActionResult DeleteSch(int ID)
@@ -332,13 +392,24 @@ namespace UIBusReservationSystem.Controllers
 
             return View(schobj);
         }
-        [HttpDelete]
-        public IActionResult DeleteSch()
+        [HttpPost]
+        public IActionResult DeleteSch(Schedule sch, int id = 0)
         {
+            id = sch.ScheduleId;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5863/api/");
+                var res = client.DeleteAsync($"AdminAPI/deleteSchedule/{id}");
+                res.Wait();
+                var op = res.Result;
+                if (op.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+            }
             return View();
         }
 
-=======
->>>>>>> 342cda93ebc3a5e31d91dc4e8fd585cc2954ee3b
+
     }
 }

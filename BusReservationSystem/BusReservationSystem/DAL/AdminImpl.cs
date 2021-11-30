@@ -36,7 +36,7 @@ namespace BusReservationSystem.DAL
             db.SaveChanges();
             db.Remove(res);
             var op = db.SaveChanges();
-            if (op == 1)
+            if (op >=1)
                 return true;
             else
                 return false;

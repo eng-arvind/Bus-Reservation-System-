@@ -96,13 +96,7 @@ C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSyste
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\UIBusReservationSystem.pdb
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\UIBusReservationSystem.genruntimeconfig.cache
 <<<<<<< HEAD
-C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\System.Net.Http.Formatting.dll
-C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\HomePage.cshtml.g.cs
-C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\SearchBus.cshtml.g.cs
-C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\Login.cshtml.g.cs
-<<<<<<< HEAD
-C:\Users\Karthik.ks\Desktop\BusResSys\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\UserRegUI\RegisterPage.cshtml.g.cs
 =======
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\bin\Debug\net5.0\appsettings.json
@@ -289,5 +283,13 @@ C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReser
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\DeleteRoute.cshtml.g.cs
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\DeleteSch.cshtml.g.cs
 C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AdminUI\EditSch.cshtml.g.cs
-=======
 >>>>>>> 342cda93ebc3a5e31d91dc4e8fd585cc2954ee3b
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\DashBoard.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\GetReserves.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\Profile.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\ResetPass.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\AuthUserUI\Wallet.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\Book.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\DirectPayment.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\GenerateTicket.cshtml.g.cs
+C:\Users\arvind.vishwakarma\Desktop\FinalProject\BusReservationSystem\UIBusReservationSystem\obj\Debug\net5.0\Razor\Views\TicketUI\SelectSeats.cshtml.g.cs

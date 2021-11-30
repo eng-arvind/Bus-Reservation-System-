@@ -44,20 +44,20 @@ namespace BusReservationSystem.Controllers
         }
         [HttpDelete]
         //we are defining URL for every method, In api term it is called  Route
-        [Route("/api/AdminAPI/deleteBus/{id}")]
+        [Route("/api/AdminAPI/deleteBusById/{bid}")]
         public bool Delete(int bid)
         {
             return adm.DeleteBus(bid);
         }
         [HttpDelete]
-        [Route("/api/AdminAPI/deleteRoute/{id}")]
+        [Route("/api/AdminAPI/deleteRoute/{rid}")]
         [ActionName("Delete")]
         public bool DeleteRoute(int rid)
         {
             return adm.DeleteRoute(rid);
         }
         [HttpDelete]
-        [Route("/api/AdminAPI/deleteSchedule/{id}")]
+        [Route("/api/AdminAPI/deleteSchedule/{sid}")]
         [ActionName("Delete")]
         public bool DeleteSch(int sid)
         {
@@ -109,11 +109,12 @@ namespace BusReservationSystem.Controllers
         {
             return adm.PrefferedTypeOfBus();
         }
-        [HttpPost]
-        [Route("/api/AdminAPI/RestDetailsOFCust")]
-        public List<Booking> Post(DateTime dt)
+        [HttpGet]
+        [Route("/api/AdminAPI/RestDetailsOFCust/{dt}")]
+        public List<Booking> get(string dt)
         {
-            return adm.ResDetailsOFCust(dt);
+            DateTime dat = Convert.ToDateTime(dt);
+            return adm.ResDetailsOFCust(dat);
         }
 
         [HttpGet]
@@ -124,19 +125,19 @@ namespace BusReservationSystem.Controllers
             return adm.RouteWithMaxReservation();
         }
         [HttpPut]
-        [Route("/api/AdminAPI/updateBus")]
+        [Route("/api/AdminAPI/updateBus/{bid}")]
         public bool Put(Bus obj, int bid)
         {
             return adm.UpdateBus(obj, bid);
         }
         [HttpPut]
-        [Route("/api/AdminAPI/updateRoute")]
+        [Route("/api/AdminAPI/updateRoute/{rid}")]
         public bool Put(Route obj, int rid)
         {
             return adm.UpdateRoute(obj, rid);
         }
         [HttpPut]
-        [Route("/api/AdminAPI/updateSchedule")]
+        [Route("/api/AdminAPI/updateSchedule/{sid}")]
         public bool Put(Schedule obj, int sid)
         {
             return adm.UpdateSchedule(obj, sid);

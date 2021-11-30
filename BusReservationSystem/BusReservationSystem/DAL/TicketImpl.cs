@@ -29,29 +29,9 @@ namespace BusReservationSystem.DAL
 
         }
 
-        public List<Booking> GetBookingsBySchId(int schId)
-        {
-            return db.Bookings.Where(x => x.ScheduleId == schId).ToList();
-        }
-
-        public int GetLastBookId()
-        {
-            return db.Bookings.Max(x => x.BookId);
-        }
-
         public Payment GetPaymentByBookiId(int bookId)
         {
             return db.Payments.Where(x => x.BookId == bookId).FirstOrDefault();
-        }
-
-        public Route GetRouteById(int routeId)
-        {
-            return db.Routes.Where(x => x.RouteId == routeId).FirstOrDefault();
-        }
-
-        public Bus GetBusById(int busId)
-        {
-            return db.buses.Where(x => x.BusId == busId).FirstOrDefault();
         }
 
         //This method will return Schedule by using schedule Id
@@ -127,19 +107,17 @@ namespace BusReservationSystem.DAL
 
         }
 
-        public bool UpdateSchedule(Schedule updateSch, int schId)
+        //this will update the journey date
+        public bool UpdateSchedule(int schId, int bookId)
         {
-            var olddata = db.Schedules.Where(x => x.ScheduleId == schId).FirstOrDefault();
-            olddata.JrnyDate = updateSch.JrnyDate;
-            olddata.Fare = updateSch.Fare;
-            olddata.BusId = updateSch.BusId;
-            olddata.RouteId = updateSch.RouteId;
-            olddata.SeatAvl = updateSch.SeatAvl;
-            var res = db.SaveChanges();
-            if (res == 1)
-                return true;
-            else
-                return false;
+            //Changing the schedule id on booking table
+            //int? prevSchId = db.Bookings.Where(x => x.ScheduleId == schId).FirstOrDefault().ScheduleId;
+            //int? updtSchId = db.Schedules.Where(x => x.ScheduleId == schId).FirstOrDefault().ScheduleId;
+            //int? prevRtId = db.Schedules.Where(x => x.ScheduleId == prevSchId).FirstOrDefault().RouteId;
+            //int? updtRtId = db.Schedules.Where(x => x.ScheduleId == updtSchId).FirstOrDefault().RouteId;
+            //if (prevRtId != updtRtId) throw new RouteNotMatching("U selected different route");
+            db.Bookings.Where(x => x.BookId == bookId).FirstOrDefault().ScheduleId = schId;
+            return db.SaveChanges() > 0;
         }
 
         public Booking UpdateTicket(Booking book, int bookId)

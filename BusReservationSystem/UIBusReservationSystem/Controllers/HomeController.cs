@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using UIBusReservationSystem.Models;
-using BusReservationSystem.Models;
 
 namespace UIBusReservationSystem.Controllers
 {
@@ -19,19 +18,9 @@ namespace UIBusReservationSystem.Controllers
             _logger = logger;
         }
 
-        public IActionResult HomePage(UserReg user=null)
+        public IActionResult HomePage()
         {
-            return View(user);
-        }
-        [HttpPost]
-        public IActionResult HomePage(int i = 0)
-        {
-            string userId = Request.Form["UserId"];
-            string Arrive = Request.Form["from"];
-            string Dest = Request.Form["to"];
-            DateTime JrnyDate = Convert.ToDateTime(Request.Form["jrnyDate"]);
-            string jrnyDate = $"{JrnyDate.Month}-{JrnyDate.Day}-{JrnyDate.Year}";
-            return RedirectToAction("SearchBus", "TicketUI", new { arrive = Arrive, dest = Dest, jrnydate = jrnyDate, UserId=userId });
+            return View();
         }
 
         public IActionResult Privacy()

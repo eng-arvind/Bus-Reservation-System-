@@ -11,10 +11,10 @@ namespace BusReservationSystem.DAL
     {
         BRSDBContext db = new BRSDBContext();
 
-        public bool AddMoneyWallet(ADJ dJ)
+        public bool AddMoneyWallet(UserReg user, decimal amt)
         {
-            dJ.user.Wallet += dJ.amt;
-            db.Update(dJ.user);
+            user.Wallet += amt;
+            db.Update(user);
             return db.SaveChanges()>=1;
         }
 

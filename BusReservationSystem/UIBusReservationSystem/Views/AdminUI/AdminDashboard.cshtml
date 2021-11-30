@@ -1,3 +1,291 @@
+@model BusReservationSystem.Models.UserReg;
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
+        <img style="width:30px;height:30px;" src="~/Images/logo.png" />
+        <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="font-size:20px;font-weight:bold">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Terms of Use</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="color:white;float:right">
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("AdminDashboard","AdminUI")"><span class="glyphicon glyphicon-refresh"></span> Refresh</a></li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("AdminHome","AdminUI")"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<h2 style="text-align:center;color:blue">Welcome to Admin Dashboard</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<div style="display:inline-flex;width:100%">
+    <div style="width:30%;padding-left:10px;margin-top:20px;">
+        <div style="font-size:15px;">
+            <h3>Get Registered User Not Booked Yet</h3>
+            <input type="submit" name="command" value="GetRegUserNotBookedYet" style="background-color:brown;color:white" />
+            @if (ViewData["usernotreg"] != null)
+            {
+                List<BusReservationSystem.Models.UserReg> notreguser = (List<BusReservationSystem.Models.UserReg>)ViewData["usernotreg"];
+                <table border="1" style="margin-top:5px;">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Mob No</th>
+
+                    </tr>
+                    @foreach (var data in notreguser)
+                    {
+                        <tr style="color:blue">
+                            <td>@data.FirstName</td>
+                            <td>@data.LastName</td>
+                            <td>@data.UserEmail</td>
+                            <td>@data.UserMob</td>
+
+                        </tr>
+                    }
+
+                </table>
+
+            }
+        </div>
+        <div style="font-size:15px;margin-top:10px;">
+            <h3>Get Last Month Profit</h3>
+            <input type="submit" name="command" value="LastMnthProfit" style="background-color:brown;color:white" />
+            @if (ViewData["lastmonthp"] != null)
+            {
+                <h2 style="margin-top:5px;">Profit: Rs. <span style="color:blue">@ViewData["lastmonthp"]</span></h2>
+
+            }
+        </div>
+        <div style="font-size: 15px; margin-top: 10px;">
+            <h3>Get Prefered Type Bus</h3>
+            <input type="submit" name="command" value="PrefferedTypeOfBus" style="background-color:brown;color:white" />
+            @if (ViewData["prefbus"] != null)
+            {
+                var buslstobj = ViewData["prefbus"] as BusReservationSystem.Models.Bus;
+                <h2 style="margin-top:5px;">Bus Name: <span style="color:blue">@buslstobj.BusName</span></h2>
+            }
+        </div>
+        <div style="font-size: 15px; margin-top: 10px;">
+            <h3>Get Reservation Details of Customer</h3>
+            <input type="datetime-local" name="jdate" />
+            <br />
+            <input type="submit" name="command" value="ResDetailsOFCust" style="background-color:brown;color:white" />
+            @if (ViewData["resdetails"] != null)
+            {
+                List<BusReservationSystem.Models.Booking> notreguser = (List<BusReservationSystem.Models.Booking>)ViewData["resdetails"];
+                <table border="1" style="margin-top:5px;">
+                    <tr>
+                        <th>Email </th>
+                        <th>Mob No.</th>
+                        <th>N. Passengers</th>
+                        <th>Fare</th>
+                        <th>Status</th>
+
+                    </tr>
+                    @foreach (var data in notreguser)
+                    {
+                        <tr style="color:blue">
+                            <td>@data.UserEmail</td>
+                            <td>@data.UserMob</td>
+                            <td>@data.Npassengers</td>
+                            <td>@data.Tcharge</td>
+                            <td>@data.BookStatus</td>
+                        </tr>
+                    }
+
+                </table>
+
+            }
+        </div>
+        <div style="font-size: 15px;margin-top: 10px;">
+            <h3>Get Route With Maximum Reservation</h3>
+            <input type="submit" name="command" value="RouteWithMaxReservation" style="background-color:brown;color:white" />
+            @if (ViewData["maxres"] != null)
+            {
+                var rtlstobj = ViewData["maxres"] as BusReservationSystem.Models.Route;
+                <h2 style="margin-top:5px;">Route Name: <span style="color:blue">@rtlstobj.Arrive</span> to  <span style="color:blue">@rtlstobj.Dest</span></h2>
+            }
+        </div>
+
+    </div>
+    <div style="width:70%;font-size:15px;">
+
+        <div style="display:inline-flex">
+            <div style="width:375px;">
+                <h2>Insert Bus</h2>
+                <table border="1">
+                    <tr>
+                        <th>Enter Bus Name</th>
+                        <td><input type="text" name="busname" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Total Seats</th>
+                        <td><input type="number" name="totalseat" /></td>
+                    </tr>
+                    <tr><td><input type="submit" name="command" value="Insert Bus" style="background-color:brown;color:white" /></td></tr>
+                </table>
+            </div>
+            <div style="margin-left:20px;">
+                @if (ViewData["allbuses"] != null)
+                {
+                    List<BusReservationSystem.Models.Bus> buslst = (List<BusReservationSystem.Models.Bus>)ViewData["allbuses"];
+
+                    <table border="1" style="width:400px;">
+                        <tr>
+                            <th>Bus Id</th>
+                            <th>Bus Name</th>
+                            <th>Total Seats</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        @foreach (var data in buslst)
+                        {
+                            <tr>
+                                <td>@data.BusId</td>
+                                <td>@data.BusName</td>
+                                <td>@data.TotalSeats</td>
+                                <td>@Html.ActionLink("Edit", "EditBus", "AdminUI", new { ID = data.BusId }, null)</td>
+                                <td>@Html.ActionLink("Delete", "DeleteBus", "AdminUI", new { ID = data.BusId }, null)</td>
+                            </tr>
+                        }
+                    </table>
+
+                }
+            </div>
+        </div>
+        <hr />
+        <div style="display:inline-flex">
+            <div style="width:375px;">
+                <h2>Insert Route</h2>
+                <table border="1">
+                    <tr>
+                        <th>Enter Arrive</th>
+                        <td><input type="text" name="arrival" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Destination</th>
+                        <td><input type="text" name="dest" /></td>
+                    </tr>
+                    <tr><td><input type="submit" name="command" value="Insert Route" style="background-color:brown;color:white" /></td></tr>
+                </table>
+            </div>
+            <div style="margin-left:20px;">
+                @if (ViewData["allroutes"] != null)
+                {
+                    List<BusReservationSystem.Models.Route> rtlst = (List<BusReservationSystem.Models.Route>)ViewData["allroutes"];
+
+                    <table border="1" style="width:400px;">
+                        <tr>
+                            <th>Route Id</th>
+                            <th>Arrive</th>
+                            <th>Dest.</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        @foreach (var data in rtlst)
+                        {
+                            <tr>
+                                <td>@data.RouteId</td>
+                                <td>@data.Arrive</td>
+                                <td>@data.Dest</td>
+                                <td>@Html.ActionLink("Edit", "EditRoute", "AdminUI", new { ID = data.RouteId }, null)</td>
+                                <td>@Html.ActionLink("Delete", "DeleteRoute", "AdminUI", new { ID = data.RouteId }, null)</td>
+                            </tr>
+                        }
+                    </table>
+
+                }
+            </div>
+        </div>
+        <hr />
+        <div style="display:inline-flex">
+            <div>
+                <h2>Insert Schedule</h2>
+                <table border="1">
+                    <tr>
+                        <th>Enter Route Id</th>
+                        <td><input type="number" name="routeid" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Journey Date</th>
+                        <td><input type="datetime-local" name="datetime" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Bus Id</th>
+                        <td><input type="number" name="bussid" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Available Seats</th>
+                        <td><input type="number" name="seatavl" /></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Fare</th>
+                        <td><input type="number" name="farecharge" /></td>
+                    </tr>
+                    <tr><td><input type="submit" name="command" value="Insert Schedule" style="background-color:brown;color:white" /></td></tr>
+                </table>
+            </div>
+            <div style="margin-left:20px;margin-bottom:10px;">
+                @if (ViewData["allschedule"] != null)
+                {
+                    List<BusReservationSystem.Models.Schedule> schlst = (List<BusReservationSystem.Models.Schedule>)ViewData["allschedule"];
+
+                    <table border="1" style="width:90%;">
+                        <tr>
+                            <th>Schedule Id</th>
+                            <th>Route Id</th>
+                            <th>Journey Date</th>
+                            <th>Bus Id</th>
+                            <th>Available Seats</th>
+                            <th>Fare</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        @foreach (var data in schlst)
+                        {
+                            <tr>
+                                <td>@data.ScheduleId</td>
+                                <td>@data.RouteId</td>
+                                <td>@data.JrnyDate</td>
+                                <td>@data.BusId</td>
+                                <td>@data.SeatAvl</td>
+                                <td>@data.Fare</td>
+                                <td>@Html.ActionLink("Edit", "EditSch", "AdminUI", new { ID = data.ScheduleId }, null)</td>
+                                <td>@Html.ActionLink("Delete", "DeleteSch", "AdminUI", new { ID = data.ScheduleId }, null)</td>
+                            </tr>
+                        }
+                    </table>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}
+<div>
+    <footer style="position:relative;bottom:1px;width:100%;height:50px;background-color:darkgrey">
+
+        <div class="footer-copyright text-center py-3">
+            © 2020 Copyright:
+            <a href="https://globallogic.com/"> GlobalBusSeva.com</a>
+        </div>
+    </footer>
+</div>
+
 ﻿<div>
     Hell from admin
 </div>

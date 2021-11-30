@@ -1,0 +1,54 @@
+﻿@model BusReservationSystem.Models.Route;
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:firebrick;margin-bottom:0px">
+        <img style="width:30px;height:30px;" src="~/Images/logo.png" />
+        <a style="font-size:30px;font-weight:bold;color:white" class="navbar-brand" href="#">Global Bus Seva</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="font-size:20px;font-weight:bold">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Terms of Use</a>
+                </li>
+                <li style="font-size:15px" class="nav-item active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" style="color:white;float:right">
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("AdminDashboard","AdminUI")"><span class="glyphicon glyphicon-refresh"></span> Refresh</a></li>
+                <li style="margin: 10px; font-size: 15px"><a style="color:white" href="@Url.Action("AdminHome","AdminUI")"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-top:5%;margin-left:40%;font-size:15px;">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <table border="1">
+                <tr>
+                    <td>Route ID</td>
+                    <td>@Html.TextBoxFor(x => x.RouteId, new { @readonly = true })</td>
+                </tr>
+                <tr>
+                    <td>Arrive Name</td>
+                    <td>@Html.TextBoxFor(x => x.Arrive, new { @readonly = true })</td>
+                </tr>
+                <tr>
+                    <td>Dest Name</td>
+                    <td>@Html.TextBoxFor(x => x.Dest, new { @readonly = true })</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Delete Route" style="color:white;background-color:brown" /></td>
+                </tr>
+            </table>
+        }
+        <br />
+        <div>
+            @Html.ActionLink("Insert New Route", "AdminDashboard", "AdminUI")
+        </div>
+    </div>
+</div>

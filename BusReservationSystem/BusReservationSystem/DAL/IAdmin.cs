@@ -10,8 +10,11 @@ namespace BusReservationSystem.DAL
     {
         public AdminMaster IsAdmin(AdminMaster admn);
         public bool InsertBus(Bus newbus);
+        public List<Bus> GetAllBus();
         public bool InsertRoute(Route newRoute);
+        public List<Route> GetAllRoute();
         public bool InsertSchedule(Schedule newSch);
+        public List<Schedule> GetAllSchedule();
         public bool UpdateBus(Bus updateBus, int busId);
         public bool UpdateRoute(Route updateRoute, int routeId);
         public bool UpdateSchedule(Schedule updateSch, int schId);

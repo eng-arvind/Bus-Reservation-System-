@@ -22,6 +22,26 @@ namespace BusReservationSystem.Controllers
             this.adm = it;
             this.db = db;
         }
+        [HttpGet]
+        [Route("/api/AdminAPI/showAllbuses")]
+        public List<Bus> Get()
+        {
+            return adm.GetAllBus();
+        }
+        [HttpGet]
+        [Route("/api/AdminAPI/showAllroute")]
+        [ActionName("Get")]
+        public List<Route> Getroute()
+        {
+            return adm.GetAllRoute();
+        }
+        [HttpGet]
+        [Route("/api/AdminAPI/showAllschedule")]
+        [ActionName("Get")]
+        public List<Schedule> Getsch()
+        {
+            return adm.GetAllSchedule();
+        }
         [HttpDelete]
         //we are defining URL for every method, In api term it is called  Route
         [Route("/api/AdminAPI/deleteBus/{id}")]
@@ -45,7 +65,8 @@ namespace BusReservationSystem.Controllers
         }
         [HttpGet]
         [Route("/api/AdminAPI/GetRegUNotBookedYet")]
-        public List<UserReg> Get()
+        [ActionName("Get")]
+        public List<UserReg> Genotbyet()
         {
             return adm.GetRegUserNotBookedYet();
         }

@@ -9,6 +9,21 @@ namespace BusReservationSystem.DAL
     public class AdminImpl : IAdmin
     {
         BRSDBContext db = new();
+        public List<Bus> GetAllBus()
+        {
+            var res = db.buses.ToList();
+            return res;
+        }
+        public List<Route> GetAllRoute()
+        {
+            var res = db.Routes.ToList();
+            return res;
+        }
+        public List<Schedule> GetAllSchedule()
+        {
+            var res = db.Schedules.ToList();
+            return res;
+        }
         public bool DeleteBus(int busId)
         {
             var res = db.buses.Where(x => x.BusId == busId).FirstOrDefault();
